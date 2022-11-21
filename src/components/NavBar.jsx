@@ -15,7 +15,7 @@ const MyNavBar = () =>{
     <Navbar bg="light" expand="lg" className="NavBarMain">
       <Container className="ContainerNavMain">
       <div className="contLogo">
-            <img src="../public/logoWeb.png" alt="" srcset="" />
+            <img src="/logoWeb.png" alt="" srcset="" />
           </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="navBarComp">
