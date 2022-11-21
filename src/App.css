@@ -1,0 +1,96 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:wght@100;400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.NavBarMain{
+    border-top: 5.5px solid #A95534;
+    font-family: 'Poppins';
+
+}
+.container{
+margin-left: 0;
+margin-right: 0;
+    }
+    
+.contLogo{
+    width: 220px;
+    height: 120px;
+    display: flex;
+    justify-content: flex-start;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.navBarComp{
+   gap: 75px;
+
+}
+
+
+.UserOptions{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.UserOptions span a{
+    text-decoration: none;
+    color: #A95534;
+   
+}
+
+
+.icons{
+    font-size: 25px;
+}
+
+.carrito{
+    position: relative;
+    height: 100%;
+    width: auto;
+
+}
+
+.iconsCar {
+     fill: #A95534;
+     font-size: 30px;
+}
+
+.contadorCarrito{
+    position: absolute;
+   right: -12px;
+   top: -18px;
+    background-color: #A95534;
+font-size: 12.5px;
+    font-weight: 600;
+    color: white;
+    border: black 2px solid;
+    border-radius: 50px;
+    padding: 1px;
+}
+
+
+footer{
+    background-color: #A95534;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins';
+}
+
+footer p{
+    margin: 0;
+    padding: 0;
+}
