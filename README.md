@@ -1,6 +1,6 @@
 <div>
 <h1>📚Comics & Mangas📚</h1>
-<h2>E-Commerce dedicado a la venta de Mangas y Comics</h2>
+<h2>E-Commerce Con React, centrada en la venta de Comics y mangas.</h2>
 <div>
 <h3>Algunas herramientas utilizadas hasta el momento...</h3>
 <ul>
@@ -13,7 +13,7 @@
 </ul>
 
 </div>
-  <p> En progreso...👀</p>
+  <p> Hasta el momento...👀</p>
   
  
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/95512912/206264285-8a6f71e0-7855-4cc3-85a8-29ba5008b047.gif)
