@@ -26,7 +26,7 @@ export const Comic = (props) =>{
       {
         (props.novedad)
         ? <ContNovedad><ImgNovedad src={props.novedad } alt="pngNovedad"  /></ContNovedad>
-        : <HideContNovedad/>
+        : <ContNovedad/>
       }
      
     </ContCard>
