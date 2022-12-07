@@ -1,0 +1,98 @@
+
+
+
+.NavBarMain{
+    border-top: 5.5px solid #A95534;
+    font-family: 'Poppins';
+    box-shadow: 1px 5px 17px 0px rgba(169,85,52,0.75);
+    -webkit-box-shadow: 1px 5px 17px 0px rgba(169,85,52,0.75);
+    -moz-box-shadow: 1px 5px 17px 0px rgba(169,85,52,0.75);
+    position: fixed;
+  height: auto;
+
+}
+.container{
+margin-left: 0;
+margin-right: 0;
+    }
+    
+.contLogo{
+    width: 260px;
+    height: 160px;
+    display: flex;
+    justify-content: flex-start;
+}
+.contLogo img{
+    height: 160px;
+    width: 200px;
+    
+    object-fit: cover;
+}
+
+.navBarComp{
+   gap: 75px;
+
+}
+
+
+.UserOptions{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.UserOptions span a{
+    text-decoration: none;
+    color: #A95534;
+   
+}
+.icons{
+    font-size: 25px;
+}
+.navCont{
+    gap: 20px;
+}
+
+
+.topNavBar{
+
+    text-align: center;
+    color: #A95534;
+    background-color: whitesmoke;
+    padding: 10px;
+font-weight: 600;
+width: 100%;
+}
+.topNavBar p{
+    margin: 0;
+}
+.linkNav{
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins';
+    position: relative;
+ 
+}
+
+.linkNav::after {
+    content: "";
+    background: var(--color-primary);
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+  }
+  
+   .linkNav:hover::after {
+    width: 50%;
+  }
+
+
+  .linkNav:hover{
+    color: black;
+  }

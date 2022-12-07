@@ -1,0 +1,13 @@
+footer{
+    background-color: var(--color-primary);
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins';
+}
+
+footer p{
+    margin: 0;
+    padding: 0;
+   
+}
