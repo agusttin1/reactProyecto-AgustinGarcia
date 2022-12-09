@@ -72,13 +72,6 @@ height:85px;
 width:85px;
 
 `
-
-
-export const HideContNovedad = styled.div`
-display:none;
-
-`
-
 export const ImgNovedad = styled.img`
 height:90%;
 width:100%;

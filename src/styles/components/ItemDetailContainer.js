@@ -4,7 +4,8 @@ export const DetailCont = styled.section`
   max-width: 1200px;
   margin: 100px auto;
   width: 100%;
-  background: #a95534;
+  background: var(--color-primary);
+  border-radius: 20px;
   height: 100%;
 `;
 export const ContCard = styled.div`
@@ -67,14 +68,14 @@ export const ContFooterDetail = styled.div`
   width: 100%;
 `;
 export const ButtonDetail = styled.button`
-  padding: 5px;
+   padding: 5px;
 
   border-radius: 10px;
   color: var(--color-primary);
   font-family: "Poppins";
   border: 2px solid white;
-  text-shadow: 4px 4px 10px black;
-  background-color: white;
+   text-shadow: 4px 4px 10px black; 
+  background-color: white; 
 `;
 export const SectionCaract = styled.section`
   width: 100%;
@@ -124,3 +125,23 @@ export const P = styled.p`
   font-family: "Poppins";
 
 `;
+
+export const ContStock = styled.span`
+font-family: 'Poppins';
+`
+
+
+export const BtnToCart = styled.button`
+padding: 10px;
+font-family: 'Poppins';
+border: none;
+border-radius: 10px;
+font-weight: 700;
+transition: 9 ease-in-out;
+
+&:hover{
+  color: var(--color-primary);
+  background-color:#d9d9d9;
+
+}
+`

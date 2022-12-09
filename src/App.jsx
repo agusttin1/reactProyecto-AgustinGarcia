@@ -3,6 +3,7 @@ import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer";
 import FeaturesCont from "./components/Features";
+import Cart from "./components/Cart";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
@@ -17,14 +18,10 @@ const App = () =>{
   <MyNavBar/>
 
   <Routes>
-    <Route path='/'  element={<>
-  <FeaturesCont/>  
-    <ItemListContainer/>
-    </>}/>
-
+    <Route path='/'  element={<><FeaturesCont/><ItemListContainer/></>}/>
     <Route path='/categoria/:Category' element={<ItemListContainer/>}/>
     <Route path='/item/:idComic' element={<ItemDetailContainer/>}/> 
-    
+    <Route path='/cart' element={<Cart/>}></Route>
   </Routes>
   <Footer/>
   </BrowserRouter>

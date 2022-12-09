@@ -1,12 +1,21 @@
-import { Img,CardDetail,CardImage,ContCard,DetailCont,Title ,Description,Price,ButtonDetail,ContFooterDetail,SectionCaract,ContenedorCaract,ContenedorTitulo,ContenedorIndices,I,P} from "../styles/components/ItemDetailContainer.js";
+import { Img,CardDetail,CardImage,ContCard,DetailCont,Title ,Description,Price,ContFooterDetail,SectionCaract,ContenedorCaract,ContenedorTitulo,ContenedorIndices,I,P,ContStock,BtnToCart} from "../styles/components/ItemDetailContainer.js";
+import  ItemCount from "./ItemCount.jsx";
+import { useState } from "react";
 import Loader from "./Loader.jsx";
+import { Link } from "react-router-dom";
 
 
 
 const ItemDetail = ({items}) =>{
+    const [itemCount,setItemCount] = useState(0)
+    const onAdd = (qty)=>{
+        alert(`compraste ${qty} unidades.`)
+        setItemCount(qty)
+    
+    }
+       
 return(
-
-    <>
+ <>
     {
 items && items.image ?
 <main>
@@ -20,11 +29,17 @@ items && items.image ?
             <CardDetail>
                 <Title>{items.name}</Title>
                 <Description>{items.details}</Description>
-                
+                <ContStock>Stock: {items.stock}</ContStock>
                 <ContFooterDetail>
                 <Price>${items.price}</Price>
-                <ButtonDetail>Añadir al carrito</ButtonDetail>
-                
+{
+    itemCount === 0
+    ?
+    <ItemCount initial={itemCount} stock={items.stock} onAdd={onAdd}/>
+    :
+    <Link to="/cart"><BtnToCart>Ir al carrito</BtnToCart></Link>
+}
+
                 </ContFooterDetail>
                 
             </CardDetail>
@@ -46,8 +61,7 @@ items && items.image ?
     </ContenedorIndices>
         </ContenedorCaract>
     </SectionCaract>
-   
-    
+
 </main>
    
     : <Loader/>
