@@ -10,6 +10,7 @@
 <li><img width="21.98" padding="0" height="16.06" src="https://user-images.githubusercontent.com/95512912/206236236-0f7cc115-fe6b-423a-aa99-605cd093b39c.png" />
   React-Bootstrap</li>
 <li><img width="21.98" padding="0" height="16.06" src="https://user-images.githubusercontent.com/95512912/206235826-b3a63506-1198-410f-8b92-16071eb5ea75.svg" />React-Icons</li>
+<li><img width="21.98" padding="0" height="16.06" src="https://user-images.githubusercontent.com/95512912/206640549-70d72cfe-45be-4dbe-b330-237234de5fcd.png" />Styled-Components</li>
 </ul>
 
 </div>
