@@ -52,7 +52,7 @@ items && items.image ?
         <ContenedorCaract>
 
     <ContenedorTitulo>
-        <ContenedorTitulo><h2>Caracteristicas del producto</h2></ContenedorTitulo>
+        <h2>Caracteristicas del producto</h2>
     </ContenedorTitulo>
     <ContenedorIndices>
         <P>Numero de paginas:<I>{items.caracteristicas.nPaginas}</I></P>

@@ -9,6 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Carrito from "./CartWidget";
 
 import "../App.css";
+import { StyledLink } from "../styles/components/NavBar";
 import Logo from "../assets/logo/logoWeb.png"
 import { Link } from "react-router-dom";
 
@@ -27,9 +28,9 @@ const MyNavBar = () =>{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="navBarComp">
           <Nav className="me-auto navCont">
-            <Link to='/categoria/Comic Americano'className="linkNav">Comic Americano</Link>
-            <Link to='/categoria/Comic Europeo' className="linkNav">Comic Europeo</Link>
-            <Link to='/categoria/Manga' className="linkNav">Manga</Link>
+            <StyledLink to='/categoria/Comic Americano'>Comic Americano</StyledLink>
+            <StyledLink to='/categoria/Comic Europeo'>Comic Europeo</StyledLink>
+            <StyledLink to='/categoria/Manga'>Manga</StyledLink>
           </Nav>
          
           <div className="UserOptions">

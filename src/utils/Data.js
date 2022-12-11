@@ -3,10 +3,10 @@ const ComicsData = [
     id: "1",
     name: "J. K. ROWLING’S WIZARDING WORLD: AMIGOS Y ENEMIGOS. UN ÁLBUM DE LAS PELÍCULAS",
     price: 3533.45,
-    stock:0,
+    stock: 0,
     category: "Comic Americano",
     image: "https://i.ibb.co/dpwfBkh/hp-amigos-enemigos.jpg",
-    novedad:"https://i.ibb.co/pWrSFCQ/novedadd.png",
+    novedad: "https://i.ibb.co/pWrSFCQ/novedadd.png",
     headerDetails:
       "¡APRENDE TODO SOBRE LOS AMIGOS Y ENEMIGOS ÚNICOS QUE APARECEN EN LAS PELÍCULAS DE HARRY POTTER!",
     details:
@@ -21,10 +21,10 @@ const ComicsData = [
     id: "2",
     name: "HAUNTED HORROR BIBLIOTECA DE CÓMICS DE TERROR DE LOS AÑOS 50",
     price: 5756.25,
-    stock:100,
+    stock: 100,
     category: "Comic Americano",
     image: "https://i.ibb.co/S6dcnbT/haunted-horror.jpg",
-  
+
     headerDetails: "¡ADENTRATE Y CONOCE MAS SOBRE ESTE COMIC!",
     details:
       "Autores como Jack Cole, Bernard Baily, Mike Sekowsky, Jay Disbrow, Sheldon Moldoff, George Tuska, Lou Cameron revistas como Weird Terror, This Magazine is Haunted, Web of Evil, The Beyond, Worlds of Fear, Adventures Into Darkness, Chamber of Chills editoriales como Fawcett, Ace, Quality, Timor, Standard, Harvey son nombres ya conocidos por el buen aficionado a los cómics de terror norteamericanos de los años 50. Este décimo volumen de la Biblioteca de Cómics de Terror de los años 50, recopila los tres primeros números del comic book Haunted Horror, una revista que surge en el 2012 y recopilaba historietas de terror de diversas editoriales de los años 50.",
@@ -38,7 +38,7 @@ const ComicsData = [
     id: "3",
     name: "EL ASOMBROSO SPIDERMAN 09: EL REGRESO DEL LÁDRON (Marvel Gold Omnibus)",
     price: 8457.27,
-    stock:100,
+    stock: 100,
     category: "Comic Americano",
     image: "https://i.ibb.co/qp58H3W/spiderman-9-gold.jpg",
     headerDetails: "",
@@ -54,10 +54,10 @@ const ComicsData = [
     id: "4",
     name: "CROSSOVER 02",
     price: 3869.97,
-    stock:100,
+    stock: 100,
     category: "Comic Americano",
     image: "https://i.ibb.co/jbNfL6B/crossvore-2.jpg",
-    novedad:"https://i.ibb.co/pWrSFCQ/novedadd.png",
+    novedad: "https://i.ibb.co/pWrSFCQ/novedadd.png",
     headerDetails: "",
     details:
       "Hace cinco años el reino de ficción de los cómics colapsó sobre nuestro mundo real. Ahora, en medio del caos, se alza una nueva amenaza. Alguien, o algo, está matando guionistas de cómics por todo el país. ¡Scott Snyder! ¡Brian K. Vaughn! ¡Chip Zdarsky! ¡Robert Kirkman! ¡Brian Michael Bendis! Nadie está a salvo en el sangriento y explosivo segundo volumen de… ¡Crossover!",
@@ -71,10 +71,9 @@ const ComicsData = [
     id: "5",
     name: "EL ASESINO 01 (EDICION INTEGRAL)",
     price: 6035.79,
-    stock:100,
+    stock: 100,
     category: "Comic Europeo",
-    image:
-      "https://i.ibb.co/0cZWt65/asesino-1.jpg",
+    image: "https://i.ibb.co/0cZWt65/asesino-1.jpg",
     headerDetails:
       "LLEGA LA EDICIÓN INTEGRAL DE UNA DE LAS GRANDES SAGAS DEL CÓMIC EUROPEO",
     details:
@@ -89,10 +88,10 @@ const ComicsData = [
     id: "6",
     name: "EL MUNDO SIN FIN",
     price: 5889.09,
-    stock:100,
+    stock: 100,
     category: "Comic Europeo",
     image: "https://i.ibb.co/zxSJ53Z/mundo-sin-fin.jpg",
-    
+
     headerDetails:
       "UN LIBRO FUNDAMENTAL PARA ENTENDER LA ACTUAL CRISIS ENERGÉTICA",
     details:
@@ -107,10 +106,10 @@ const ComicsData = [
     id: "7",
     name: "EL ETERNAUTA",
     price: 5604.65,
-    stock:100,
+    stock: 100,
     category: "Comic Europeo",
     image: "https://i.ibb.co/TrZZBcW/eternauta-oesterheld-solano.jpg",
-    novedad:"https://i.ibb.co/pWrSFCQ/novedadd.png",
+    novedad: "https://i.ibb.co/pWrSFCQ/novedadd.png",
     headerDetails: "",
     details:
       "El Eternauta es la primera novela gráfica en español y la más importante para el mundo hispanoamericano. Para esta edición definitiva, revisada y corregida que siguen las directrices de los herederos de los creadores, se han retocado más de cincuenta ilustraciones sin alterar el espíritu original de la obra, con la intención de optimizar su calidad visual, potencia y continuidad gráfica. Con su vitalidad narrativa, su vigor político y su peso iconográfico intactos, nos complace presentar la multipremiada historia que influenció a más de cinco generaciones de lectores alrededor de todo el mundo.",
@@ -124,10 +123,10 @@ const ComicsData = [
     id: "8",
     name: "1984 de Xavier Coste",
     price: 6597.55,
-    stock:100,
+    stock: 100,
     category: "Comic Europeo",
     image: "https://i.ibb.co/Q6M8M3G/1984-3.jpg",
- 
+
     author: "George Orwell, Xavier Coste ",
     headerDetails: "LA MAGISTRAL ADAPTACIÓN DE UN CLÁSICO ETERNAMENTE ACTUAL",
     details:
@@ -142,7 +141,7 @@ const ComicsData = [
     id: "9",
     name: "BLUE LOCK 07",
     price: 1337.22,
-    stock:100,
+    stock: 100,
     category: "Manga",
     image: "https://i.ibb.co/vhLrDH4/bluelock-07.jpg",
     headerDetails: "¡Sigue la interesantísima “Batalla de rivalidades”!",
@@ -158,10 +157,10 @@ const ComicsData = [
     id: "10",
     name: "BLUE LOCK 02",
     price: 1337.22,
-    stock:100,
+    stock: 100,
     category: "Manga",
     image: "https://i.ibb.co/CM19jMC/blue-lock-n-02.jpg",
-    novedad:"https://i.ibb.co/pWrSFCQ/novedadd.png",
+    novedad: "https://i.ibb.co/pWrSFCQ/novedadd.png",
     headerDetails: "",
     details:
       "Jinpachi Ego pone a prueba de inmediato a los participantes con una primera selección de BLUE LOCK, los 5 equipos de cada edificio se enfrentarán en un torneo de todos contra todos. Una vez hayan terminado los 10 partidos, los 2 equipos con más puntos continuarán su formación aquí, mientras que los otros 3 serán eliminados. Eso significa que también serán expulsados de BLUE LOCK.",
@@ -175,7 +174,7 @@ const ComicsData = [
     id: "11",
     name: "ONE PIECE 93",
     price: 1337.22,
-    stock:100,
+    stock: 100,
     category: "Manga",
     image: "https://i.ibb.co/3S2Hrz0/one-piece-n-93.jpg",
     headerDetails: "",
@@ -191,10 +190,10 @@ const ComicsData = [
     id: "12",
     name: "BLEACH: BESTSELLER 01",
     price: 1346.42,
-    stock:100,
+    stock: 100,
     category: "Manga",
     image: "https://i.ibb.co/VHCqdhf/bleach-bestseller.jpg",
-    novedad:"https://i.ibb.co/pWrSFCQ/novedadd.png",
+    novedad: "https://i.ibb.co/pWrSFCQ/novedadd.png",
     headerDetails: "",
     details:
       "¡La serie de culto sigue en Panini Comics! Ichigo puede ver espíritus y tiene contacto con el más allá, al que sacará provecho tras conocer a un shinigami que le proporciona la espada a juego con sus habilidades.",
@@ -205,4 +204,4 @@ const ComicsData = [
     },
   },
 ];
-export default ComicsData
+export default ComicsData;
