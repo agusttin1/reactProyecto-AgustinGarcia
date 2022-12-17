@@ -1,13 +1,38 @@
-import { CiShoppingCart } from "react-icons/ci";
-import "../App.css"
 
 
+
+import { NoContador,CarritoCont,Icon, ContadorCart } from "../styles/components/CartWidget";
+
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import Loader from "./Loader";
+
+
+import { CartContext } from "./CartContext";
 const Carrito = () =>{
+
+    const {QtyInCart} = useContext(CartContext)
     return(
-        <div className="carrito">
-            <CiShoppingCart className="iconsCar"/>
-            <span className="contadorCarrito">89</span>
-          </div>
+
+
+        
+        <CarritoCont>
+            <Link to="/cart">
+            <Icon />
+
+            </Link>
+{
+
+QtyInCart() === 0 ? <NoContador></NoContador> : <ContadorCart>({QtyInCart()}) </ContadorCart>  
+
+}
+            
+            
+
+
+
+        
+          </CarritoCont>
     )
 }
 

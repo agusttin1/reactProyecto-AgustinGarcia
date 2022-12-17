@@ -3,14 +3,21 @@ import  ItemCount from "./ItemCount.jsx";
 import { useState } from "react";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "./CartContext.jsx";
 
 
 
 const ItemDetail = ({items}) =>{
     const [itemCount,setItemCount] = useState(0)
+
+    const { addToCart} = useContext(CartContext)
+
     const onAdd = (qty)=>{
+
         alert(`compraste ${qty} unidades.`)
         setItemCount(qty)
+        addToCart(items ,qty) 
     
     }
        
