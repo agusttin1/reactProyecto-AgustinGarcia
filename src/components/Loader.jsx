@@ -1,4 +1,4 @@
-import { ContLoader, Pulse, TextLoader } from "../styles/components/Loader.js";
+import { ContLoader, Pulse, TextLoader } from "../styles/components/Loader.Elements";
 const Loader = () => {
   return (
     <ContLoader>
@@ -9,4 +9,3 @@ const Loader = () => {
 };
 
 export default Loader;
-

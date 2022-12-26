@@ -1,27 +1,23 @@
-import ComicsData from "../utils/Data"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import customFetch from "../utils/customFetch";
 import ItemDetail from "./ItemDetail";
+import { fetchOneFromFirebase } from "../utils/fetchFromFirebase";
 
+const ItemDetailContainer = () => {
+  const [dato, setDato] = useState({});
+  const { idComic } = useParams();
 
-const ItemDetailContainer = () =>{
-    const [datos,setDatos] = useState([])
-    const {idComic} = useParams()
+  useEffect(() => {
+    fetchOneFromFirebase(idComic)
+      .then((result) => setDato(result))
+      .catch((e) => console.log(e));
+  }, []);
 
-    useEffect(()=>{
-customFetch(2000,ComicsData.find(item => item.id === idComic))
-.then(response => setDatos(response))
-.catch(err => console.log(err))
-    },[])
-    
-    
-    return(
-        <>
-       <ItemDetail items={datos}/>
-      
-        </>
-    )
-}
+  return (
+    <>
+      <ItemDetail items={dato} />
+    </>
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

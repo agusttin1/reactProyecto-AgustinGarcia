@@ -9,7 +9,7 @@ display: flex;
     height: auto;
     gap: 25px;
     justify-content: center;
-    background-color: whitesmoke;
+   
     `
 export const ContCard = styled.div`
 width: 240px;
@@ -41,7 +41,7 @@ background-color:var(--color-primary);
 export const CardTitle = styled.div`
 font-size:16px;
 font-family: 'Poppins';
-width:200px;
+width:250px;
 white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;

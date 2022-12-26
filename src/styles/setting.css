@@ -1,5 +1,7 @@
 :root{
     --color-primary:#A95534;
+    
     --color-secondary:#451813;
-    --bg-primary:whitesmoke;
+    --bg-primary:#fff7e0;
+    --bg-secondary:#efd997;
 }

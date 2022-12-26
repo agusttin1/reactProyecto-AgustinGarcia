@@ -1,5 +1,5 @@
 
-import {ContCarritoVacio, PmsjErr,StyledLink } from "../styles/components/Cart"
+import {ContCarritoVacio, PmsjErr,StyledLink } from "../styles/components/Cart.Elements"
 import {MdOutlineRemoveShoppingCart} from "react-icons/md"
 
 

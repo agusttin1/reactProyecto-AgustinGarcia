@@ -1,10 +1,14 @@
 import styled from "styled-components";
+export const MainDetail = styled.main`
+height: 100%;
+width: 100%;
 
+`
 export const DetailCont = styled.section`
   max-width: 1200px;
   margin: 100px auto;
   width: 100%;
-  background: var(--color-primary);
+ background-color: var(--color-primary);
   border-radius: 20px;
   height: 100%;
 `;

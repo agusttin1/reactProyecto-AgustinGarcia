@@ -22,6 +22,7 @@ export const ContLoader = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  background-color: var(--bg-primary);
 `;
 
 export const Pulse = styled.div`

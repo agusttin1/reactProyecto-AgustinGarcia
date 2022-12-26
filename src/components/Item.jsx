@@ -1,5 +1,5 @@
 
-import { ContCard,CardImg, ButtonCard , CardTitle,CardBody,CardText,ContNovedad,ImgNovedad,ContIconDetails,StyledLink} from "../styles/components/ItemListContainer.js";
+import { ContCard,CardImg, ButtonCard , CardTitle,CardBody,CardText,ContNovedad,ImgNovedad,ContIconDetails,StyledLink} from "../styles/components/ItemListContainer.Elements";
 
 import { AiOutlineInfoCircle } from "react-icons/ai";
 

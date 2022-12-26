@@ -1,55 +1,160 @@
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
+import {
+  ContenedorCart,
+  ContCart,
+  InfoCart,
+  TextName,
+  IconTrash,
+  BtnAmount,
+  BtnClear,
+  Wrapper,
+  ContTitulo,
+  BuyCont,
+  Impuesto,
+  ContInfo,
+  PriceOld,
+  PriceTotal,
+  TotalFin,
+  Totals,
+  WrapperBuy,
+  TituloWrapper,
+  ImpuestoPrice,
+  ImgCont,
+  Img,
+  Nombre,
+  DataPrice,
+  SubtotalItem,
+} from "../styles/components/Cart.Elements";
+import CartEmpty from "./CartEmptyContainer";
+import "../App.css";
+import { serverTimestamp, updateDoc, increment, doc } from "firebase/firestore";
+import { db } from "../utils/firebaseConfig";
+import { Toaster } from "react-hot-toast";
+import { NotifyOrder, AlertClear, NotifyDelete } from "./Toast&Alert";
 
-import {useContext} from "react"
-import { CartContext } from "./CartContext"
-import { ContenedorCart } from "../styles/components/Cart"
-import CartEmpty from "./CartEmptyContainer"
+const Cart = () => {
+  const {
+    CartList,
+    deleteThis,
+    ClearCart,
+    TotalPrice,
+    QtyInCart,
+    TotalPerItem,
+    CalcTaxes,
+    setCartList,
+  } = useContext(CartContext);
 
+  const updateStock = () => {
+    CartList.forEach(async (item) => {
+      const itemRef = doc(db, "products", item.id);
+      await updateDoc(itemRef, {
+        stock: increment(-item.cantidad),
+      });
+    });
+  };
 
-const Cart = () =>{
-    const {CartList,deleteThis,ClearCart,TotalPrice} = useContext(CartContext)
+  const CreateOrder = () => {
+    let order = {
+      buyer: {
+        name: "Leo Messi",
+        email: "campeonDelMundo@coderhouse.com",
+        phone: "1234567",
+      },
+      item: CartList.map((item) => ({
+        id: item.id,
+        title: item.name,
+        price: item.price,
+        qty: item.cantidad,
+      })),
+      date: serverTimestamp(),
+      total: TotalPrice(),
+    };
 
+    NotifyOrder(order, updateStock, ClearCart);
+  };
 
-    return CartList.length > 0 ?(
-       <ContenedorCart>
+  return (
+    <>
+      {CartList.length > 0 ? (
+        <Wrapper>
+          <ContenedorCart>
+            <ContTitulo>
+              <p>MI CARRITO</p>
+              <p>Item's ({QtyInCart()})</p>
+            </ContTitulo>
 
-        {  CartList.map(item =>
-        
-        <div className="ContCart">
-        <div className="ContTitulo">
-            <h1>MI CARRITO</h1>
-        </div>
-<div className="Carrito" style={{display:'flex',alignItems:'center'}}>
-<div className="div" key={item.id} style={{display:'flex'}}>
+            {CartList.map((item) => (
+              <ContCart key={item.id}>
+                <ImgCont>
+                  <Img src={item.image} alt="" />
+                </ImgCont>
+                <InfoCart>
+                  <Nombre>
+                    <TextName>{item.name}</TextName>
+                  </Nombre>
+                  <DataPrice>
+                    <p>
+                      Precio u: <span>${item.price}</span>
+                    </p>
+                    |
+                    <p>
+                      cantidad: <span>{item.cantidad}</span>
+                    </p>
+                  </DataPrice>
+                  <SubtotalItem>
+                    <p>Subtotal: ${TotalPerItem(item.id)}</p>
+                  </SubtotalItem>
+                  <IconTrash
+                    onClick={() => {
+                      NotifyDelete();
+                      deleteThis(item.id);
+                    }}
+                  />
+                </InfoCart>
+              </ContCart>
+            ))}
+            <BtnClear onClick={() => AlertClear(setCartList)}>
+              Limpiar carrito
+            </BtnClear>
+          </ContenedorCart>
 
-<div className="IMAGE" style={{height:'200px', width:'200px'}}>
-<img style={{height:'100%', width:'100%', objectFit:'cover'}}src={item.image} alt="" />
-</div>
-<div className="nombre">
-<p>{item.name}</p>
-</div>
-<div className="cantidad">
-<p>{item.cantidad}</p>
-</div>
-<div className="subtotal">
-<p>Subtotal:{TotalPrice()}</p>
-</div>
-<button onClick={() => deleteThis(item.id)}>borrar</button>
-</div>
-</div>
-         </div>
-    
-     
- 
+          <WrapperBuy>
+            <BuyCont>
+              <TituloWrapper>
+                <p>Precio total Detalle</p>
+                <p>${(TotalPrice() + CalcTaxes()).toFixed(2)}</p>
+              </TituloWrapper>
+              <ContInfo>
+                <PriceTotal>
+                  <p>Subtotal:</p>
+                  <p>{TotalPrice()}</p>
+                </PriceTotal>
+                <Impuesto>
+                  <p>Impuesto:</p>
+                  <ImpuestoPrice>+{CalcTaxes().toFixed(2)}</ImpuestoPrice>
+                </Impuesto>
+                <TotalFin>
+                  <p>Total a pagar:</p>
+                  <Totals>
+                    <PriceOld>${TotalPrice()}</PriceOld>
+                    <p style={{ color: "black" }}>
+                      {" "}
+                      ${(TotalPrice() + CalcTaxes()).toFixed(2)}
+                    </p>
+                  </Totals>
+                </TotalFin>
+              </ContInfo>
 
-     )}
-        
-       </ContenedorCart>
-    
-    ):(
-        <CartEmpty/>
-    )
-}
-
-
-{/* <button onClick={()=>ClearCart()}>Limpiar all</button> */}
-export default Cart
+              <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
+            </BuyCont>
+          </WrapperBuy>
+        </Wrapper>
+      ) : (
+        <CartEmpty />
+      )}
+      <Toaster />
+    </>
+  );
+};
+export default Cart;

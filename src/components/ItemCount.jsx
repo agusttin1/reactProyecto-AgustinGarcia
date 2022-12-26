@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 
-import {BtnAdd,BtnSub,ContBtnDetail,Count} from "../styles/components/ItemCount";
-import { ButtonDetail } from "../styles/components/ItemDetailContainer";
+import {BtnAdd,BtnSub,ContBtnDetail,Count} from "../styles/components/ItemCount.Elements";
+import { ButtonDetail } from "../styles/components/ItemDetailContainer.Elements";
 
  const ItemCount = ({initial ,onAdd,stock}) =>{
     const[count,setCount] = useState(initial)

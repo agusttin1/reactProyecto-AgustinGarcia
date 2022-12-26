@@ -1,11 +1,11 @@
 
 
 
-import { NoContador,CarritoCont,Icon, ContadorCart } from "../styles/components/CartWidget";
+import { NoContador,CarritoCont,Icon, ContadorCart } from "../styles/components/CartWidget.Elements";
 
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Loader from "./Loader";
+
 
 
 import { CartContext } from "./CartContext";
