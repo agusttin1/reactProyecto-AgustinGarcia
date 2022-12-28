@@ -30,7 +30,7 @@ const MyNavBar = () => {
   return (
     <header>
     <TopNavBar>
-      <p><BsTruck/> Envio gratis desde $12000</p>
+      <p><BsTruck/> Envio Gratis A Partir de los $18000</p>
     </TopNavBar>
       <NavBarContainer>
       

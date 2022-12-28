@@ -24,33 +24,16 @@ import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
 
 import { CartContext } from "./CartContext.jsx";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
-const ItemDetail = ({ items }) => {
+
+ const ItemDetail = ({ items }) => {
   const [itemCount, setItemCount] = useState(0);
+  
 
-  const { addToCart } = useContext(CartContext);
+  const { addToCart,NotifyAdd} = useContext(CartContext);
 
-  const NotifyAdd = (qty) =>
-    toast.success(
-    `Se ha Agregado ${
-        qty == 1 ? `${qty} producto` : ` ${qty} productos`
-    } al carrito`,
-    {
-        style: {
-          border: "1px solid #713200",
-          padding: "16px",
-          color: "#713200",
-        },
-        iconTheme: {
-          primary: "#713200",
-          secondary: "#FFFAEE",
-        },
-        duration: 1000,
-      }
-    );
-
-  const onAdd = (qty) => {
+      const onAdd = (qty) => {
     NotifyAdd(qty);
     setItemCount(qty);
     addToCart(items, qty);
@@ -107,7 +90,9 @@ return (
               </ContenedorIndices>
             </ContenedorCaract>
           </SectionCaract>
+               
                   </>
+
         
         ) : (
             <Loader />
@@ -115,6 +100,6 @@ return (
             <Toaster position="bottom-right" reverseOrder={false} />
     </MainDetail>
   );
+  
 };
-
-export default ItemDetail;
+export default ItemDetail

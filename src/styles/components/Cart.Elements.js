@@ -229,6 +229,8 @@ export const Totals = styled.div`
 
 export const PriceOld = styled.p`
   color: rgb(158, 158, 158);
+  margin: 0;
+  padding: 0;
 `;
 
 // Components para el carrito vacio //

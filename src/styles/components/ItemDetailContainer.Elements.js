@@ -82,7 +82,8 @@ export const ButtonDetail = styled.button`
   background-color: white;
 `;
 export const SectionCaract = styled.section`
-  width: 100%;
+  width: auto;
+  margin: 60px;
   height: auto;
   justify-content: center;
   display: flex;
