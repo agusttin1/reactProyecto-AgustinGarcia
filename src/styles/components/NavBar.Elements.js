@@ -108,7 +108,7 @@ position: relative;
 }
 `
 
-export const CarritoCont =styled.div`
+export const ContIcons =styled.div`
 position: absolute;
 right: 50px;
 padding: 0;
@@ -116,6 +116,7 @@ margin: 0;
 display: flex;
 align-items: center;
 padding-right: 1rem;
+gap: 30px;
 `
 
 
@@ -143,3 +144,22 @@ export const TopNavBar = styled.div`
     margin: 0;
   }
   `
+
+
+export const IconAccounts = styled.div`
+margin: 0;
+padding: 0;
+display: flex;
+gap:20px;
+font-size: 20px;
+color: var(--color-primary);
+display: flex;
+align-items: center;
+p{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+`

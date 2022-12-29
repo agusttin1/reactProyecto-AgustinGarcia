@@ -56,17 +56,4 @@ export const fetchOneFromFirebase = async(id)=>{
     return newOrderRef
     
   }
-  
-  export const FetchImgFireBase = async()=>{
-    let q = query(collection(db,'products')) 
-  
-    const querySnapshot = await getDocs(q)
-    const  ImgFromFirestore = querySnapshot.docs.map(item=>({
-      image:item.image,
-      id:item.id,
-      ...item.data()
-    }))
-  
-    return ImgFromFirestore
-  
-  }
+

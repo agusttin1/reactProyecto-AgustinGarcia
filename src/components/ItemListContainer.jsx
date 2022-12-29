@@ -36,7 +36,11 @@ const results = search == '' ? datos : datos.filter((dato)=>dato.name.toLowerCas
 {
     SearchComponent(search,searcher)
 }
-<ItemList items={results}/>
+
+
+
+    <ItemList items={results}/>
+
 </>
 
     )

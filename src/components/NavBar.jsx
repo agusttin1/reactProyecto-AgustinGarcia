@@ -10,9 +10,10 @@ import {
   Menu,
   MenuItem,
   StyledLink,
-  CarritoCont,
+  ContIcons,
   ContIconBars,
-  TopNavBar
+  TopNavBar,
+  IconAccounts
 } from "../styles/components/NavBar.Elements";
 import "../App.css";
 import { useState } from "react";
@@ -22,6 +23,7 @@ import Logo from "../assets/logo/logoWeb.png";
 
 const MyNavBar = () => {
   const [click, setClick] = useState(false);
+  const [option, setOption] = useState(false);
 
   const ChangeClick = () => {
     return setClick(!click);
@@ -29,11 +31,12 @@ const MyNavBar = () => {
 
   return (
     <header>
-    <TopNavBar>
-      <p><BsTruck/> Envio Gratis A Partir de los $18000</p>
-    </TopNavBar>
+      <TopNavBar>
+        <p>
+          <BsTruck /> Envio Gratis A Partir de los $18000
+        </p>
+      </TopNavBar>
       <NavBarContainer>
-      
         <NavBar>
           <ContLogo>
             <Link to="/">
@@ -43,6 +46,7 @@ const MyNavBar = () => {
           <ContIconBars onClick={() => ChangeClick()}>
             {click ? <FaTimes /> : <FaBars />}
           </ContIconBars>
+
           <Menu click={click}>
             <MenuItem onClick={() => ChangeClick()}>
               <StyledLink to="/categoria/Comic Americano">
@@ -59,9 +63,19 @@ const MyNavBar = () => {
             </MenuItem>
           </Menu>
 
-          <CarritoCont>
+          <ContIcons>
+          <IconAccounts>
+       
+              <p>Inciar Session</p>
+              <AiOutlineUser />
+          
+          
+              <p>Registrarse</p>
+              <AiOutlineUserAdd />
+
+          </IconAccounts>
             <Carrito />
-          </CarritoCont>
+          </ContIcons>
         </NavBar>
       </NavBarContainer>
     </header>

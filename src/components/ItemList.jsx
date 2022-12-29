@@ -9,7 +9,8 @@ export const ItemList = ({items}) =>{
             
 
         {
-          (items.length > 0)  ?  items.map(item => <Comic  key={item.id} {...item}/>) : <Loader/>
+          (items.length > 0 )  ?  items.map(item => <Comic  key={item.id} {...item}/>) :<Loader/> 
+        
         }
        
         </ContMainCards>

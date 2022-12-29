@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
-import { BsFillTrashFill } from "react-icons/bs";
+import { TbTrash,TbTrashX } from "react-icons/tb";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -98,14 +98,22 @@ text-align: center;
 font-family: 'Poppins';
 `
 
-export const IconTrash = styled(BsFillTrashFill)`
-  position: absolute;
+export const ContIcon =styled.div`
+position: absolute;
   top: 15px;
   right: 15px;
-  font-size: 22px;
+`
+export const IconTrash = styled(TbTrash)`
+  font-size: 26px;
   fill: var(--color-primary);
   cursor: pointer;
 `;
+
+export const IconTrash2 = styled(TbTrashX)`
+  font-size: 26px;
+  fill: var(--color-primary);
+  cursor: pointer;
+`
 
 export const TextName = styled.p`
   font-size: 16px;

@@ -8,6 +8,7 @@ export const FeaturesSection = styled.section`
   width: 100%;
   height: 100%;
   background-color: var(--color-primary);
+  margin-bottom: 60px;
   @media (max-width: 1024px) {
     flex-direction: column;
   }

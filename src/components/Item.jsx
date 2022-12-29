@@ -15,6 +15,8 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import { CartContext } from "./CartContext";
 import { useContext } from "react";
 import { Toaster } from "react-hot-toast";
+
+
 export const Comic = (props) => {
 
 const { addToCart, NotifyAdd } = useContext(CartContext);
