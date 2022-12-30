@@ -1,11 +1,10 @@
-
 import {
   Search,
   ContHeaderFilters,
   ContTitulo,
   ContComp,
   ContCategory,
-  StyledLink
+  StyledLink,
 } from "../styles/components/SearchComp.Elements";
 
 const SearchComponent = (search, searcher) => {
@@ -15,12 +14,7 @@ const SearchComponent = (search, searcher) => {
         <h1>Bienvenido a nuestra tienda</h1>
       </ContTitulo>
       <ContComp>
-        <Search
-          value={search}
-          onChange={searcher}
-          type="text"
-         
-        />
+        <Search value={search} onChange={searcher} type="text" />
         <div>
           <ContCategory>
             <li>

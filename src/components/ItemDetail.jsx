@@ -16,35 +16,32 @@ import {
   P,
   ContStock,
   BtnToCart,
-  MainDetail
+  MainDetail,
 } from "../styles/components/ItemDetailContainer.Elements";
 import ItemCount from "./ItemCount.jsx";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
 
 import { CartContext } from "./CartContext.jsx";
 import { Toaster } from "react-hot-toast";
 
-
- const ItemDetail = ({ items }) => {
+const ItemDetail = ({ items }) => {
   const [itemCount, setItemCount] = useState(0);
-  
 
-  const { addToCart,NotifyAdd} = useContext(CartContext);
+  const { addToCart, NotifyAdd } = useContext(CartContext);
 
-      const onAdd = (qty) => {
+  const onAdd = (qty) => {
     NotifyAdd(qty);
     setItemCount(qty);
     addToCart(items, qty);
-};
+  };
 
-return (
+  return (
     <MainDetail>
-    {items && items.image ? (
+      {items && items.image ? (
         <>
-            
-        <DetailCont>
+          <DetailCont>
             <ContCard>
               <CardImage>
                 <Img src={items.image} />
@@ -58,12 +55,12 @@ return (
                   <Price>${items.price}</Price>
                   {itemCount === 0 ? (
                     <ItemCount
-                    initial={itemCount}
-                    stock={items.stock}
-                    onAdd={onAdd}
+                      initial={itemCount}
+                      stock={items.stock}
+                      onAdd={onAdd}
                     />
-                    ) : (
-                        <Link to="/cart">
+                  ) : (
+                    <Link to="/cart">
                       <BtnToCart>Ir al carrito</BtnToCart>
                     </Link>
                   )}
@@ -90,16 +87,12 @@ return (
               </ContenedorIndices>
             </ContenedorCaract>
           </SectionCaract>
-               
-                  </>
-
-        
-        ) : (
-            <Loader />
-            )}
-            <Toaster position="bottom-right" reverseOrder={false} />
+        </>
+      ) : (
+        <Loader />
+      )}
+      <Toaster position="bottom-right" reverseOrder={false} />
     </MainDetail>
   );
-  
 };
-export default ItemDetail
+export default ItemDetail;

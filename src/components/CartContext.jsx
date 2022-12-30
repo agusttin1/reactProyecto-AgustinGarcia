@@ -1,71 +1,68 @@
 import { createContext, useState } from "react";
-import  toast  from "react-hot-toast";
-
+import toast from "react-hot-toast";
 
 export const CartContext = createContext();
 
-
 export const CartContextProvider = ({ children }) => {
+  const [CartList, setCartList] = useState([]);
 
-    const [CartList, setCartList] = useState([]);
+  const Existe = (id) => CartList.some((verifyId) => verifyId.id === id);
 
+  const QtyInCart = () => CartList.reduce((acc, el) => acc + el.cantidad, 0);
 
-const Existe = (id) => CartList.some(verifyId => verifyId.id === id)
+  const TotalPerItem = (id) => {
+    let index = CartList.map((item) => item.id).indexOf(id);
+    let calc = CartList[index].price * CartList[index].cantidad;
 
-const QtyInCart = () => CartList.reduce((acc,el)=> acc + el.cantidad, 0) 
+    return calc;
+  };
 
-const TotalPerItem = (id) =>{
-    let index = CartList.map(item => item.id).indexOf(id)
-    let calc = CartList[index].price * CartList[index].cantidad
-
-    return calc
-
-}
-
-
-const TotalWithTax = () =>{
-  return (TotalPrice() + CalcTaxes()).toFixed(2)
-
-}
-
-const CalcTaxes = ()=> TotalPrice() * 0.18
-
-const TotalPrice = () => CartList.reduce((acc,el) => acc + el.cantidad * el.price,0)
-
-const ClearCart=()=> setCartList([])
-
-
-
-const addToCart = (item, qty) => {
-
-    if(Existe(item.id)){
-        setCartList(CartList.map(TheSame =>{
-            return TheSame.id === item.id ? {...TheSame , cantidad: TheSame.cantidad + qty} : TheSame
-        }))
+  const TotalWithTax = () => {
+    let Envio = (TotalPrice() + CalcTaxes()).toFixed(2)
+    if(Envio >= 18000){
+      return Envio
     }else{
-
-        setCartList([
-                ...CartList,
-                {
-                    id: item.id,
-                    name: item.name,
-                    image: item.image,
-                    price: item.price,
-                    cantidad: qty,
-                },
-                ]);
-
+      let suma= (parseInt(Envio) + 500).toFixed(2)
+      return suma
     }
+  };
 
-};
+  const CalcTaxes = () => TotalPrice() * 0.18;
 
+  const TotalPrice = () =>
+    CartList.reduce((acc, el) => acc + el.cantidad * el.price, 0);
 
-const deleteThis = (id) => {
+  const ClearCart = () => setCartList([]);
+
+  const addToCart = (item, qty) => {
+    if (Existe(item.id)) {
+      setCartList(
+        CartList.map((TheSame) => {
+          return TheSame.id === item.id
+            ? { ...TheSame, cantidad: TheSame.cantidad + qty }
+            : TheSame;
+        })
+      );
+    } else {
+      setCartList([
+        ...CartList,
+        {
+          id: item.id,
+          name: item.name,
+          image: item.image,
+          price: item.price,
+          cantidad: qty,
+        },
+      ]);
+    }
+  };
+
+  const deleteThis = (id) => {
     let refreshArray = CartList.filter((item) => item.id !== id);
     setCartList(refreshArray);
-};
-const NotifyAdd = (qty) =>
+  };
 
+  const NotifyAdd = (qty) =>
     toast.success(
       `Se ha Agregado ${
         qty == 1 ? `${qty} producto` : ` ${qty} productos`
@@ -82,27 +79,25 @@ const NotifyAdd = (qty) =>
         },
         duration: 1000,
       }
-      );
-    
+    );
 
-
-
-      
-      
-return (
-    <CartContext.Provider value={{ 
-         CartList,
-         addToCart, 
-         deleteThis,
-         ClearCart,
-         TotalPerItem,
-         QtyInCart,
-         TotalPrice,
-         CalcTaxes,
-         setCartList,
-         NotifyAdd,
-         TotalWithTax}}>
-    {children}
+  return (
+    <CartContext.Provider
+      value={{
+        CartList,
+        addToCart,
+        deleteThis,
+        ClearCart,
+        TotalPerItem,
+        QtyInCart,
+        TotalPrice,
+        CalcTaxes,
+        setCartList,
+        NotifyAdd,
+        TotalWithTax,
+      }}
+    >
+      {children}
     </CartContext.Provider>
-);
+  );
 };

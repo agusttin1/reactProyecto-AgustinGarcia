@@ -1,15 +1,17 @@
 
 import {ContCarritoVacio, PmsjErr,StyledLink } from "../styles/components/Cart.Elements"
-import {MdOutlineRemoveShoppingCart} from "react-icons/md"
+import BatmanError from "../assets/heroPngs/cartEmpty.png"
 
 
 
 const CartEmpty = () =>{
 return(
 <ContCarritoVacio>
-<MdOutlineRemoveShoppingCart style={{color:'var(--color-primary)' ,  fontSize:'200px'}}/>
-<PmsjErr>Carrito Vacio</PmsjErr>
-<PmsjErr>Agregue algunos productos para poder comprar</PmsjErr>
+<div style={{width:'250px',height:'250px'}}>
+    <img style={{width:'100%',height:'100%',objectFit:'contain'}} src={`${BatmanError}`} alt="" />
+</div>
+<PmsjErr>“Oops, parece que no hay nadie aqui!</PmsjErr>
+
 <StyledLink to='/'>Ir a comprar</StyledLink>
 </ContCarritoVacio>
 

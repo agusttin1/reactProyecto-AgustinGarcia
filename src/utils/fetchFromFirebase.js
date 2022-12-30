@@ -11,10 +11,11 @@ export const fetchFromFirebase = async(Category) =>{
   if(Category){
     
     q = query(collection(db,'products'), where('category','==', Category))
-    
+    document.title=`Comic & Manga | ${Category}`
 }else{
 
   q = query(collection(db,"products"), orderBy('name'))
+  document.title='Comic & Manga | Home'
 }
 
 const querySnapshot = await getDocs(q);
@@ -56,4 +57,3 @@ export const fetchOneFromFirebase = async(id)=>{
     return newOrderRef
     
   }
-

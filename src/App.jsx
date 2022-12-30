@@ -10,7 +10,10 @@ import './App.css'
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import ItemRecomendContainer from "./partials/ItemRecomendContainer";
 
+
 const App = () =>{
+
+
 
   return(
 
@@ -24,7 +27,6 @@ const App = () =>{
     <Route path='/categoria/:Category' element={<ItemListContainer/>}/>
     <Route path='/item/:idComic' element={<>
       <ItemDetailContainer/>
-      
       <FeaturesCont/>
       <ItemRecomendContainer/>
     </>

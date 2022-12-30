@@ -4,7 +4,7 @@ import {
   ContLi,
   Li,
   ContTitulo,
-  Btn
+  Btn,
 } from "../styles/components/Recomendation.Elements";
 import { fetchFromFirebase } from "../utils/fetchFromFirebase";
 import Loader from "../components/Loader";
@@ -18,7 +18,7 @@ const ItemRecomendContainer = () => {
 
   useEffect(() => {
     fetchFromFirebase()
-      .then(res => setData(()=>RndomElements(res)))
+      .then((res) => setData(() => RndomElements(res)))
       .catch((e) => console.log(e));
   }, []);
 

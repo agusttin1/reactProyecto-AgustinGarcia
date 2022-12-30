@@ -10,7 +10,9 @@ export const Wrapper = styled.div`
   gap: 100px;
   height: auto;
   padding: 50px;
+  position: relative;
   margin: 20px;
+
 `;
 
 export const ContTitulo = styled.div`
@@ -85,6 +87,7 @@ export const DataPrice = styled.div`
   p {
     color: black;
     font-weight: 900px;
+
 
     span {
       color: var(--color-primary);
@@ -161,13 +164,13 @@ export const BtnClear = styled.button`
 export const WrapperBuy = styled.div`
   width: 560px;
   height: 100%;
-
   display: flex;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 15px;
-`;
+
+`
 
 export const BuyCont = styled.div`
   flex-direction: column;
@@ -269,3 +272,29 @@ export const StyledLink = styled(Link)`
     color: var(--color-primary);
   }
 `;
+
+
+export const ContPng = styled.div`
+position: absolute;
+top: -40px;
+right: 25%;
+height: 150px;
+width: 150px;
+
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+`
+export const Envio = styled.div`
+display: flex;
+width: 100%;
+justify-content: space-between;
+
+p{
+  font-family: 'Poppins';
+
+}
+
+`

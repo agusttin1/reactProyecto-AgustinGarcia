@@ -1,6 +1,6 @@
-import Feature1 from '../assets/featuresIcons/credit-card.png'
-import Feature2 from '../assets/featuresIcons/buy-return.png'
-import Feature3 from '../assets/featuresIcons/contact-plane.png'
+import Feature1 from '../assets/icons/credit-card.png'
+import Feature2 from '../assets/icons/buy-return.png'
+import Feature3 from '../assets/icons/contact-plane.png'
 
 import {  Features,FeatureTitle,FeaturesDescrip,FeaturesSection,FeaturesImg} from "../styles/components/Features.Elements";
 

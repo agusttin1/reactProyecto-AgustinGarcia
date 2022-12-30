@@ -13,7 +13,7 @@ import {
   ContIcons,
   ContIconBars,
   TopNavBar,
-  IconAccounts
+  IconAccounts,
 } from "../styles/components/NavBar.Elements";
 import "../App.css";
 import { useState } from "react";
@@ -23,7 +23,7 @@ import Logo from "../assets/logo/logoWeb.png";
 
 const MyNavBar = () => {
   const [click, setClick] = useState(false);
-  const [option, setOption] = useState(false);
+  
 
   const ChangeClick = () => {
     return setClick(!click);
@@ -64,20 +64,14 @@ const MyNavBar = () => {
           </Menu>
 
           <ContIcons>
-          <IconAccounts>
-       
-              <p>Inciar Session</p>
+            <IconAccounts>
               <AiOutlineUser />
-          
-          
-              <p>Registrarse</p>
-              <AiOutlineUserAdd />
-
-          </IconAccounts>
+            </IconAccounts>
             <Carrito />
           </ContIcons>
         </NavBar>
       </NavBarContainer>
+     
     </header>
   );
 };
