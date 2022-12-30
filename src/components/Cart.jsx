@@ -91,10 +91,10 @@ const Cart = () => {
       {CartList.length > 0 ? (
         <Wrapper>
           <ContenedorCart>
-            <ContTitulo>
+             <ContTitulo>
               <p>MI CARRITO</p>
               <p>Item's ({QtyInCart()})</p>
-            </ContTitulo>
+            </ContTitulo> 
 
             {CartList.map((item) => (
               <ContCart key={item.id}>
@@ -131,18 +131,19 @@ const Cart = () => {
                 </InfoCart>
               </ContCart>
             ))}
-            <BtnClear onClick={() => AlertClear(setCartList)}>
+            {/* <BtnClear onClick={() => AlertClear(setCartList)}>
               Limpiar carrito
-            </BtnClear>
+            </BtnClear> */}
           </ContenedorCart>
 
-          <section style={{ height: "auto", position: "relative" }}>
+          
             <WrapperBuy>
-              <BuyCont>
-                <TituloWrapper>
+            <TituloWrapper>
                   <p>Precio total Detalle</p>
                   <p>${TotalWithTax()}</p>
-                </TituloWrapper>
+                </TituloWrapper> 
+              <BuyCont>
+                 
                 <ContInfo>
                   <PriceTotal>
                     <p>Subtotal:</p>
@@ -152,7 +153,7 @@ const Cart = () => {
                     <p>Impuesto:</p>
                     <ImpuestoPrice>+{CalcTaxes().toFixed(2)}</ImpuestoPrice>
                   </Impuesto>
-                  
+
                   <Envio>
                     <p>Envio:</p>
                     {TotalWithTax() >= 18000 ? (
@@ -174,10 +175,10 @@ const Cart = () => {
                 <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
               </BuyCont>
             </WrapperBuy>
-            <ContPng>
+             <ContPng>
               <img src={`${Spderman}`} alt="" />
-            </ContPng>
-          </section>
+            </ContPng> 
+    
         </Wrapper>
       ) : (
         <CartEmpty />

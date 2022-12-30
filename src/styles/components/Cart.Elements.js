@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
-import { TbTrash,TbTrashX } from "react-icons/tb";
+import { TbTrash, TbTrashX } from "react-icons/tb";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,13 +12,12 @@ export const Wrapper = styled.div`
   padding: 50px;
   position: relative;
   margin: 20px;
-
 `;
 
 export const ContTitulo = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 25px;
+  font-size: 20px;
   width: 100%;
   position: relative;
   color: white;
@@ -44,7 +43,7 @@ export const ContenedorCart = styled.div`
 `;
 export const ContCart = styled.div`
   width: 100%;
-  gap: 20px;
+
   background-color: red;
   display: flex;
   padding: 10px;
@@ -88,7 +87,6 @@ export const DataPrice = styled.div`
     color: black;
     font-weight: 900px;
 
-
     span {
       color: var(--color-primary);
       font-family: "Knewave";
@@ -97,15 +95,15 @@ export const DataPrice = styled.div`
 `;
 
 export const SubtotalItem = styled.div`
-text-align: center;
-font-family: 'Poppins';
-`
+  text-align: center;
+  font-family: "Poppins";
+`;
 
-export const ContIcon =styled.div`
-position: absolute;
+export const ContIcon = styled.div`
+  position: absolute;
   top: 15px;
   right: 15px;
-`
+`;
 export const IconTrash = styled(TbTrash)`
   font-size: 26px;
   fill: var(--color-primary);
@@ -116,7 +114,7 @@ export const IconTrash2 = styled(TbTrashX)`
   font-size: 26px;
   fill: var(--color-primary);
   cursor: pointer;
-`
+`;
 
 export const TextName = styled.p`
   font-size: 16px;
@@ -164,29 +162,34 @@ export const BtnClear = styled.button`
 export const WrapperBuy = styled.div`
   width: 560px;
   height: 100%;
+
   display: flex;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-
-`
+  gap: 25px;
+`;
 
 export const BuyCont = styled.div`
-  flex-direction: column;
+ width: 100%;
+  gap: 20px;
+  background-color: red;
   display: flex;
-  gap: 25px;
-  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  position: relative;
+  flex-direction: column;
 `;
 
 export const TituloWrapper = styled.div`
-  width: 560px;
+  width: 100%;
   position: relative;
   color: white;
   text-align: center;
   font-family: "knewave";
   display: flex;
-  font-size: 25px;
+  font-size: 20px;
   justify-content: space-between;
   -webkit-text-stroke: 2px var(--color-primary);
 `;
@@ -273,28 +276,32 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-
 export const ContPng = styled.div`
-position: absolute;
-top: -40px;
-right: 25%;
-height: 150px;
-width: 150px;
+  position: absolute;
+  top: 0px;
+  right: 18%;
+  height: 150px;
+  width: 150px;
 
-img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-`
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width:1360px){
+    top: 395px;
+
+    left: 48%;
+  }
+`;
+
 export const Envio = styled.div`
-display: flex;
-width: 100%;
-justify-content: space-between;
-
-p{
-  font-family: 'Poppins';
-
-}
-
-`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  p{
+    font-family: 'Poppins';
+    font-weight: 800px;
+  }
+`;
