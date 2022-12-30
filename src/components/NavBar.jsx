@@ -1,4 +1,4 @@
-import { AiOutlineUserAdd, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Carrito from "./CartWidget";

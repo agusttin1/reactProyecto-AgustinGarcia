@@ -19,15 +19,12 @@
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.4",
     "styled-components": "^5.3.6",
-    "sweetalert2": "^11.6.16",
-    "sweetalert2-react-content": "^5.0.7"
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "vite": "^3.2.3"
-    
   }
- 
 }

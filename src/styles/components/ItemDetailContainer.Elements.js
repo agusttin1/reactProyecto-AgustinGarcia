@@ -8,17 +8,28 @@ export const DetailCont = styled.section`
   max-width: 1200px;
   margin: 100px auto;
   width: 100%;
- background-color: var(--color-primary);
+
   border-radius: 20px;
   height: 100%;
 `;
 export const ContCard = styled.div`
   color: white;
+  width: 100%;
+  
   padding: 36px 0;
   position: relative;
+  background-color: var(--color-primary);
   display: flex;
   flex-wrap: row wrap;
   justify-content: space-around;
+
+  @media (max-width:880px){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
 `;
 
 export const CardImage = styled.div`

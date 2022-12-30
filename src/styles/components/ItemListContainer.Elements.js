@@ -88,8 +88,11 @@ text-decoration:none;
 export const StyledLink = styled(Link)`
 color:var(--color-secondary);
 transition: .5s ease-in-out;
+text-decoration: none;
+color: white;
 &:hover{
-    color:var(--color-primary);
+    color:wheat;
+   
 }
 
 `

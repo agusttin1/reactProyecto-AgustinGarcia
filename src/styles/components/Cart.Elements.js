@@ -290,7 +290,7 @@ export const ContPng = styled.div`
   }
 
   @media (max-width:1360px){
-    top: 395px;
+    top: 640px;
 
     left: 48%;
   }

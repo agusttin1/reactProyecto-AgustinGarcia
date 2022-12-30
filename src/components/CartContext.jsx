@@ -1,22 +1,26 @@
 import { createContext, useState } from "react";
-import toast from "react-hot-toast";
+
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
   const [CartList, setCartList] = useState([]);
 
-  const Existe = (id) => CartList.some((verifyId) => verifyId.id === id);
-
+  
   const QtyInCart = () => CartList.reduce((acc, el) => acc + el.cantidad, 0);
 
   const TotalPerItem = (id) => {
     let index = CartList.map((item) => item.id).indexOf(id);
     let calc = CartList[index].price * CartList[index].cantidad;
-
+    
     return calc;
   };
-
+  
+  const CalcTaxes = () => TotalPrice() * 0.18;
+  
+  const TotalPrice = () =>
+  CartList.reduce((acc, el) => acc + el.cantidad * el.price, 0);
+  
   const TotalWithTax = () => {
     let Envio = (TotalPrice() + CalcTaxes()).toFixed(2)
     if(Envio >= 18000){
@@ -26,15 +30,16 @@ export const CartContextProvider = ({ children }) => {
       return suma
     }
   };
-
-  const CalcTaxes = () => TotalPrice() * 0.18;
-
-  const TotalPrice = () =>
-    CartList.reduce((acc, el) => acc + el.cantidad * el.price, 0);
-
+  
   const ClearCart = () => setCartList([]);
+  
+  
+  const Existe = (id) => CartList.some((verifyId) => verifyId.id === id);
 
+  
+  
   const addToCart = (item, qty) => {
+
     if (Existe(item.id)) {
       setCartList(
         CartList.map((TheSame) => {
@@ -62,24 +67,6 @@ export const CartContextProvider = ({ children }) => {
     setCartList(refreshArray);
   };
 
-  const NotifyAdd = (qty) =>
-    toast.success(
-      `Se ha Agregado ${
-        qty == 1 ? `${qty} producto` : ` ${qty} productos`
-      } al carrito`,
-      {
-        style: {
-          border: "1px solid #713200",
-          padding: "16px",
-          color: "#713200",
-        },
-        iconTheme: {
-          primary: "#713200",
-          secondary: "#FFFAEE",
-        },
-        duration: 1000,
-      }
-    );
 
   return (
     <CartContext.Provider
@@ -93,8 +80,7 @@ export const CartContextProvider = ({ children }) => {
         TotalPrice,
         CalcTaxes,
         setCartList,
-        NotifyAdd,
-        TotalWithTax,
+        TotalWithTax
       }}
     >
       {children}

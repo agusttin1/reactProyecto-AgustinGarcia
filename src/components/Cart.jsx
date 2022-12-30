@@ -1,48 +1,19 @@
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
-import {
-  ContenedorCart,
-  ContCart,
-  InfoCart,
-  TextName,
-  IconTrash,
-  BtnAmount,
-  BtnClear,
-  Wrapper,
-  ContTitulo,
-  BuyCont,
-  Impuesto,
-  ContInfo,
-  PriceOld,
-  PriceTotal,
-  TotalFin,
-  Totals,
-  WrapperBuy,
-  TituloWrapper,
-  ImpuestoPrice,
-  ImgCont,
-  Img,
-  Nombre,
-  DataPrice,
-  SubtotalItem,
-  ContIcon,
-  IconTrash2,
-  ContPng,
-  Envio,
+import {ContenedorCart,ContCart,InfoCart,TextName,IconTrash,BtnAmount,BtnClear,Wrapper,ContTitulo,BuyCont,Impuesto,ContInfo,PriceOld,PriceTotal,TotalFin,Totals,WrapperBuy,TituloWrapper,ImpuestoPrice,ImgCont,Img,Nombre,DataPrice,SubtotalItem,ContIcon,IconTrash2,ContPng,Envio,
 } from "../styles/components/Cart.Elements";
 import CartEmpty from "./CartEmptyContainer";
 import Spderman from "../assets/heroPngs/spman.png";
 import "../App.css";
+
 import { serverTimestamp, updateDoc, increment, doc } from "firebase/firestore";
 import { db } from "../utils/firebaseConfig";
-import { Toaster } from "react-hot-toast";
-import { NotifyOrder, AlertClear, NotifyDelete } from "./Toast&Alert";
+import { AlertClear,AlertOrder } from "./Toast&Alert";
+import toast from 'react-hot-toast'
+import { createOrderFireBase } from "../utils/fetchFromFirebase";
 
 const Cart = () => {
-  useEffect(() => {
-    document.title = "Comic & Manga | Cart";
-  }, []);
-
+  const [icon, setIcon] = useState(false);
   const {
     CartList,
     deleteThis,
@@ -51,11 +22,27 @@ const Cart = () => {
     QtyInCart,
     TotalPerItem,
     CalcTaxes,
-    setCartList,
     TotalWithTax,
   } = useContext(CartContext);
 
-  const [icon, setIcon] = useState(false);
+  useEffect(() => {
+    document.title = "Comic & Manga | Cart";
+  }, []);
+
+const NotifyDelete = ()=>{
+toast.error('Se ha eliminado el producto',{
+  style: {
+    border: '1px solid #713200',
+    padding: '16px',
+    color: '#713200',
+  },
+  iconTheme: {
+    primary: '#713200',
+    secondary: '#FFFAEE',
+  },
+  duration:1000
+})
+} 
 
   const updateStock = () => {
     CartList.forEach(async (item) => {
@@ -65,6 +52,7 @@ const Cart = () => {
       });
     });
   };
+
 
   const CreateOrder = () => {
     let order = {
@@ -83,7 +71,13 @@ const Cart = () => {
       total: TotalPrice(),
     };
 
-    NotifyOrder(order, updateStock, ClearCart);
+    createOrderFireBase(order).then(res =>{
+updateStock()
+AlertOrder(res)
+ClearCart()
+    }).catch(e=>console.log(e))
+
+  
   };
 
   return (
@@ -131,9 +125,9 @@ const Cart = () => {
                 </InfoCart>
               </ContCart>
             ))}
-            {/* <BtnClear onClick={() => AlertClear(setCartList)}>
+             <BtnClear onClick={() => AlertClear(ClearCart)}>
               Limpiar carrito
-            </BtnClear> */}
+            </BtnClear> 
           </ContenedorCart>
 
           
@@ -175,15 +169,15 @@ const Cart = () => {
                 <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
               </BuyCont>
             </WrapperBuy>
-             <ContPng>
+            <ContPng>
               <img src={`${Spderman}`} alt="" />
             </ContPng> 
     
+          
         </Wrapper>
       ) : (
         <CartEmpty />
       )}
-      <Toaster />
     </>
   );
 };

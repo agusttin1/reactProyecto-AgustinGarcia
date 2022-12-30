@@ -22,17 +22,33 @@ import ItemCount from "./ItemCount.jsx";
 import { useState, useContext } from "react";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
-
+import toast from 'react-hot-toast'
 import { CartContext } from "./CartContext.jsx";
-import { Toaster } from "react-hot-toast";
+
 
 const ItemDetail = ({ items }) => {
   const [itemCount, setItemCount] = useState(0);
 
-  const { addToCart, NotifyAdd } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
-  const onAdd = (qty) => {
-    NotifyAdd(qty);
+  
+const notifyAdd = (qty) =>{
+  toast.success( qty === 1 ? 'Se ha agregado 1 producto' : `Se ha agregado ${qty} productos`, {
+    style: {
+      border: '1px solid #713200',
+      padding: '16px',
+      color: '#713200',
+    },
+    iconTheme: {
+      primary: '#713200',
+      secondary: '#FFFAEE',
+    },
+    duration:1000
+  });
+}
+
+      const onAdd = (qty) => {
+        notifyAdd(qty)
     setItemCount(qty);
     addToCart(items, qty);
   };
@@ -91,7 +107,6 @@ const ItemDetail = ({ items }) => {
       ) : (
         <Loader />
       )}
-      <Toaster position="bottom-right" reverseOrder={false} />
     </MainDetail>
   );
 };
