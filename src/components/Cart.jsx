@@ -165,14 +165,15 @@ ClearCart()
                     </Totals>
                   </TotalFin>
                 </ContInfo>
-
-                <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
-              </BuyCont>
-            </WrapperBuy>
-            <ContPng>
+                
+                <ContPng>
               <img src={`${Spderman}`} alt="" />
             </ContPng> 
     
+                <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
+              </BuyCont>
+            </WrapperBuy>
+        
           
         </Wrapper>
       ) : (

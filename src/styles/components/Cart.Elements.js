@@ -180,6 +180,7 @@ export const BuyCont = styled.div`
   background-color: whitesmoke;
   position: relative;
   flex-direction: column;
+  height: auto;
 `;
 
 export const TituloWrapper = styled.div`
@@ -278,7 +279,7 @@ export const StyledLink = styled(Link)`
 
 export const ContPng = styled.div`
   position: absolute;
-  top: 0px;
+  bottom: 16px;
   right: 18%;
   height: 150px;
   width: 150px;
@@ -290,9 +291,9 @@ export const ContPng = styled.div`
   }
 
   @media (max-width:1360px){
-    top: 640px;
-
-    left: 48%;
+    top: -120px;
+z-index: -1;
+    left: 40%;
   }
 `;
 

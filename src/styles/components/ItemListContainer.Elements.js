@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const ContMainCards = styled.div`
 display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     width: 100%;
    padding:30px;
     height: auto;
@@ -18,6 +18,11 @@ position: relative;
 background-color:white;
 padding:15px;
 border-radius:10px;
+
+@media (max-width:600px) {
+    width: 190px;
+    
+}
 `
 
 export const CardImg = styled.img`
@@ -47,6 +52,9 @@ overflow:hidden;
 text-overflow:ellipsis;
 cursor:pointer;
 text-align:center;
+@media (max-width:600px) {
+    width: 180px;
+}
 
 `
 
