@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { CiShoppingCart } from "react-icons/ci";
 
 
+
 export const NoContador = styled.span`
 display: none;
 `
@@ -9,7 +10,7 @@ export const ContadorCart = styled.span`
 position: absolute;
     right: -12px;
     top: -18px;
-    background-color: var(--color-primary);
+    background-image: var(--color-primary);
     font-size: 12.5px;
     font-weight: 600;
     color: white;

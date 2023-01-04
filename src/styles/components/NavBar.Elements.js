@@ -151,7 +151,7 @@ margin: 0;
 padding: 0;
 display: flex;
 gap:20px;
-font-size: 20px;
+font-size: 25px;
 color: var(--color-primary);
 display: flex;
 align-items: center;

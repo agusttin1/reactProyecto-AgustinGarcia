@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
+import heartFill from '../../assets/pngHeart/proxy.png'
+import heartNoFill from '../../assets/pngHeart/noFill.png'
+
 
 export const ContMainCards = styled.div`
 display: flex;
@@ -15,9 +18,11 @@ export const ContCard = styled.div`
 width: 240px;
 height: auto;
 position: relative;
-background-color:white;
-padding:15px;
+
+z-index: 99;
+padding:20px;
 border-radius:10px;
+background-color: whitesmoke;
 
 @media (max-width:600px) {
     width: 190px;
@@ -102,5 +107,25 @@ color: white;
     color:wheat;
    
 }
+
+`
+
+export const ContHeart = styled.div`
+width: 50px;
+height: 50px;
+background-image: url(${heartFill});
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+`
+
+export const ContHeartNoFill = styled.div`
+width: 50px;
+height: 50px;
+background-image: url(${heartNoFill});
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 
 `

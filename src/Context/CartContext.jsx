@@ -67,6 +67,7 @@ export const CartContextProvider = ({ children }) => {
     setCartList(refreshArray);
   };
 
+ 
 
   return (
     <CartContext.Provider
@@ -80,7 +81,8 @@ export const CartContextProvider = ({ children }) => {
         TotalPrice,
         CalcTaxes,
         setCartList,
-        TotalWithTax
+        TotalWithTax,
+       
       }}
     >
       {children}

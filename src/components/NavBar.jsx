@@ -1,4 +1,4 @@
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Carrito from "./CartWidget";
@@ -18,6 +18,7 @@ import {
 import "../App.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import HeartIcon from "../partials/WishWidget";
 
 import Logo from "../assets/logo/logoWeb.png";
 
@@ -67,6 +68,7 @@ const MyNavBar = () => {
             <IconAccounts>
               <AiOutlineUser />
             </IconAccounts>
+            <HeartIcon/>
             <Carrito />
           </ContIcons>
         </NavBar>

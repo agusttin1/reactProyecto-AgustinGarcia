@@ -8,29 +8,29 @@ import {
 } from "../styles/components/Recomendation.Elements";
 import { fetchFromFirebase } from "../utils/fetchFromFirebase";
 import Loader from "../components/Loader";
-import { CartContext } from "../components/CartContext";
+import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 import RndomElements from "./GetRndomElement";
-import toast from 'react-hot-toast'
+import toast from "react-hot-toast";
 
 const ItemRecomendContainer = () => {
   const [data, setData] = useState([]);
 
   const { addToCart } = useContext(CartContext);
-  const notifyAdd = () =>{
-    toast.success( 'Se ha agregado 1 producto', {
+  const notifyAdd = () => {
+    toast.success("Se ha agregado 1 producto", {
       style: {
-        border: '1px solid #713200',
-        padding: '16px',
-        color: '#713200',
+        border: "1px solid #713200",
+        padding: "16px",
+        color: "#713200",
       },
       iconTheme: {
-        primary: '#713200',
-        secondary: '#FFFAEE',
+        primary: "#713200",
+        secondary: "#FFFAEE",
       },
-      duration:1000
+      duration: 1000,
     });
-  }
+  };
 
   useEffect(() => {
     fetchFromFirebase()
@@ -53,13 +53,10 @@ const ItemRecomendContainer = () => {
                   <img src={props.image} alt="" />
 
                   <Btn
-                    onClick={() =>
-                      {
-                        addToCart(props, 1)
-                        notifyAdd()
-
-                      }
-                    }   
+                    onClick={() => {
+                      addToCart(props, 1);
+                      notifyAdd();
+                    }}
                   >
                     Agregar Al Carrito
                   </Btn>

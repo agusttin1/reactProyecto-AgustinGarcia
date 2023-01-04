@@ -1,6 +1,34 @@
 import { useContext, useState, useEffect } from "react";
-import { CartContext } from "./CartContext";
-import {ContenedorCart,ContCart,InfoCart,TextName,IconTrash,BtnAmount,BtnClear,Wrapper,ContTitulo,BuyCont,Impuesto,ContInfo,PriceOld,PriceTotal,TotalFin,Totals,WrapperBuy,TituloWrapper,ImpuestoPrice,ImgCont,Img,Nombre,DataPrice,SubtotalItem,ContIcon,IconTrash2,ContPng,Envio,
+import { CartContext } from "../Context/CartContext";
+import {
+  ContenedorCart,
+  ContCart,
+  InfoCart,
+  TextName,
+  IconTrash,
+  BtnAmount,
+  BtnClear,
+  Wrapper,
+  ContTitulo,
+  BuyCont,
+  Impuesto,
+  ContInfo,
+  PriceOld,
+  PriceTotal,
+  TotalFin,
+  Totals,
+  WrapperBuy,
+  TituloWrapper,
+  ImpuestoPrice,
+  ImgCont,
+  Img,
+  Nombre,
+  DataPrice,
+  SubtotalItem,
+  ContIcon,
+  IconTrash2,
+  ContPng,
+  Envio,
 } from "../styles/components/Cart.Elements";
 import CartEmpty from "./CartEmptyContainer";
 import Spderman from "../assets/heroPngs/spman.png";
@@ -8,8 +36,8 @@ import "../App.css";
 
 import { serverTimestamp, updateDoc, increment, doc } from "firebase/firestore";
 import { db } from "../utils/firebaseConfig";
-import { AlertClear,AlertOrder } from "./Toast&Alert";
-import toast from 'react-hot-toast'
+import { AlertClear, AlertOrder } from "./Toast&Alert";
+import toast from "react-hot-toast";
 import { createOrderFireBase } from "../utils/fetchFromFirebase";
 
 const Cart = () => {
@@ -29,20 +57,20 @@ const Cart = () => {
     document.title = "Comic & Manga | Cart";
   }, []);
 
-const NotifyDelete = ()=>{
-toast.error('Se ha eliminado el producto',{
-  style: {
-    border: '1px solid #713200',
-    padding: '16px',
-    color: '#713200',
-  },
-  iconTheme: {
-    primary: '#713200',
-    secondary: '#FFFAEE',
-  },
-  duration:1000
-})
-} 
+  const NotifyDelete = () => {
+    toast.error("Se ha eliminado el producto", {
+      style: {
+        border: "1px solid #713200",
+        padding: "16px",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "#713200",
+        secondary: "#FFFAEE",
+      },
+      duration: 1000,
+    });
+  };
 
   const updateStock = () => {
     CartList.forEach(async (item) => {
@@ -52,7 +80,6 @@ toast.error('Se ha eliminado el producto',{
       });
     });
   };
-
 
   const CreateOrder = () => {
     let order = {
@@ -71,13 +98,13 @@ toast.error('Se ha eliminado el producto',{
       total: TotalPrice(),
     };
 
-    createOrderFireBase(order).then(res =>{
-updateStock()
-AlertOrder(res)
-ClearCart()
-    }).catch(e=>console.log(e))
-
-  
+    createOrderFireBase(order)
+      .then((res) => {
+        updateStock();
+        AlertOrder(res);
+        ClearCart();
+      })
+      .catch((e) => console.log(e));
   };
 
   return (
@@ -85,10 +112,10 @@ ClearCart()
       {CartList.length > 0 ? (
         <Wrapper>
           <ContenedorCart>
-             <ContTitulo>
+            <ContTitulo>
               <p>MI CARRITO</p>
               <p>Item's ({QtyInCart()})</p>
-            </ContTitulo> 
+            </ContTitulo>
 
             {CartList.map((item) => (
               <ContCart key={item.id}>
@@ -125,56 +152,52 @@ ClearCart()
                 </InfoCart>
               </ContCart>
             ))}
-             <BtnClear onClick={() => AlertClear(ClearCart)}>
+            <BtnClear onClick={() => AlertClear(ClearCart)}>
               Limpiar carrito
-            </BtnClear> 
+            </BtnClear>
           </ContenedorCart>
 
-          
-            <WrapperBuy>
+          <WrapperBuy>
             <TituloWrapper>
-                  <p>Precio total Detalle</p>
-                  <p>${TotalWithTax()}</p>
-                </TituloWrapper> 
-              <BuyCont>
-                 
-                <ContInfo>
-                  <PriceTotal>
-                    <p>Subtotal:</p>
-                    <p>{TotalPrice().toFixed(2)}</p>
-                  </PriceTotal>
-                  <Impuesto>
-                    <p>Impuesto:</p>
-                    <ImpuestoPrice>+{CalcTaxes().toFixed(2)}</ImpuestoPrice>
-                  </Impuesto>
+              <p>Precio total Detalle</p>
+              <p>${TotalWithTax()}</p>
+            </TituloWrapper>
+            <BuyCont>
+              <ContInfo>
+                <PriceTotal>
+                  <p>Subtotal:</p>
+                  <p>{TotalPrice().toFixed(2)}</p>
+                </PriceTotal>
+                <Impuesto>
+                  <p>Impuesto:</p>
+                  <ImpuestoPrice>+{CalcTaxes().toFixed(2)}</ImpuestoPrice>
+                </Impuesto>
 
-                  <Envio>
-                    <p>Envio:</p>
-                    {TotalWithTax() >= 18000 ? (
-                      <p style={{ color: "gray" }}>Gratis</p>
-                    ) : (
-                      <p style={{ color: "green" }}>+500</p>
-                    )}
-                  </Envio>
+                <Envio>
+                  <p>Envio:</p>
+                  {TotalWithTax() >= 18000 ? (
+                    <p style={{ color: "gray" }}>Gratis</p>
+                  ) : (
+                    <p style={{ color: "green" }}>+500</p>
+                  )}
+                </Envio>
 
-                  <TotalFin>
-                    <p>Total a pagar Final:</p>
-                    <Totals>
-                      <PriceOld>${TotalPrice()}</PriceOld>
-                      <p style={{ color: "black" }}>${TotalWithTax()}</p>
-                    </Totals>
-                  </TotalFin>
-                </ContInfo>
-                
-                <ContPng>
-              <img src={`${Spderman}`} alt="" />
-            </ContPng> 
-    
-                <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
-              </BuyCont>
-            </WrapperBuy>
-        
-          
+                <TotalFin>
+                  <p>Total a pagar Final:</p>
+                  <Totals>
+                    <PriceOld>${TotalPrice()}</PriceOld>
+                    <p style={{ color: "black" }}>${TotalWithTax()}</p>
+                  </Totals>
+                </TotalFin>
+              </ContInfo>
+
+              <ContPng>
+                <img src={`${Spderman}`} alt="" />
+              </ContPng>
+
+              <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
+            </BuyCont>
+          </WrapperBuy>
         </Wrapper>
       ) : (
         <CartEmpty />
