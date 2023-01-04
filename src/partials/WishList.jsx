@@ -12,17 +12,11 @@ import {
     ImgNovedad,
     StyledLink,
     ContMainCards,
-    ContHeart,
-    ContHeartNoFill
+    ContHeart
   } from "../styles/components/ItemListContainer.Elements";
 const WishList = () => {
-  const { wish } = useContext(WishContext);
+  const { wish,removeOfWishList } = useContext(WishContext);
 
-  const [click,setClick] = useState(false)
-
-  const handleClick = ()=>{
-    setClick(!click)
-  }
   return (
     <>
     <ContMainCards>
@@ -30,7 +24,7 @@ const WishList = () => {
       {wish.map((item) => {
           return(
               
-              <ContCard>
+              <ContCard key={item.id}>
             <div style={{ position: "relative" }}>
               <CardImg src={item.image} />
             </div>
@@ -41,15 +35,10 @@ const WishList = () => {
             <StyledLink to={`/item/${item.id}`}>Ver Producto</StyledLink>
           </ButtonCard>
             </CardBody>
-            <div onClick={()=>handleClick()} >
-
-                {
-                    click ? <ContHeart onClick={()=>addToWishList(item)}></ContHeart> : <ContHeartNoFill onClick={()=>addToWishList(item)} ></ContHeartNoFill>
-                }
-               
-
-
-             
+            <div>
+              
+                <ContHeart type='checkbox' onClick={()=> removeOfWishList(item.id)}/> 
+            
             </div>
             {item.novedad ? (
               <ContNovedad>

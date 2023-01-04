@@ -110,22 +110,46 @@ color: white;
 
 `
 
-export const ContHeart = styled.div`
-width: 50px;
-height: 50px;
-background-image: url(${heartFill});
-background-repeat: no-repeat;
+export const ContHeart = styled.input`
+width: 45px;
+height: 45px;
+position: relative;
+z-index: 1;
+appearance: unset;
+&::after{
+    background-color: transparent;
+background:url(${heartFill}) no-repeat;
+border: none;
+
 background-position: center;
-background-size: cover;
+background-size: contain;
+position: absolute;
+height: 40px;
+width: 40px;
+content: '';
+}
 
 `
 
-export const ContHeartNoFill = styled.div`
-width: 50px;
-height: 50px;
-background-image: url(${heartNoFill});
-background-repeat: no-repeat;
+export const ContHeartNoFill = styled.input`
+width: 45px;
+height: 45px;
+position: relative;
+background-color: transparent;
+border: none;
+outline: none;
+z-index: 1;
+appearance: unset;
+
+&::after{
+    background: url(${heartNoFill}) no-repeat;
+border: none;
+height: 40px;
+width: 40px;
 background-position: center;
 background-size: cover;
-
+background-color: transparent;
+position: absolute;
+content: '';
+}
 `
