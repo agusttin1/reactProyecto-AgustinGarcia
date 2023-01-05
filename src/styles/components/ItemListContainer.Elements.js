@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
-import heartFill from '../../assets/pngHeart/Fill.png'
-import heartNoFill from '../../assets/pngHeart/noFill.png'
+import heartFill from './../../assets/pngHeart/Fill.png'
+import heartNoFill from './../../assets/pngHeart/noFill.png'
 
 
 export const ContMainCards = styled.div`
