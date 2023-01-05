@@ -121,7 +121,7 @@ top:  0px;
 right: -10px;
 &::after{
     background-color: transparent;
-background:url(${heartFill}) no-repeat;
+background-image:url(${heartFill}) ;
 border: none;
 
 background-position: center;
@@ -148,7 +148,7 @@ top:  0px;
 right: -10px;
 
 &::after{
-    background: url(${heartNoFill}) no-repeat;
+    background-image: url(${heartNoFill}) ;
 border: none;
 height: 40px;
 width: 40px;
