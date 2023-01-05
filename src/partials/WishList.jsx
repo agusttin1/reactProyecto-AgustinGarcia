@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext , useEffect} from "react";
 import { WishContext } from "../Context/WishContext";
 import {
   ContCard,
@@ -16,6 +16,11 @@ import { ContWishList , ContCardWishList,ContTituloWList} from "../styles/compon
 import WishListEmpty from "./WishListEmpty";
 const WishList = () => {
   const { wish, removeOfWishList } = useContext(WishContext);
+
+  useEffect(()=>{
+    document.title = 'Comic & Manga | Wish List'
+
+  },)
 
   return (
     <>
