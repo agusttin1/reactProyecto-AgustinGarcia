@@ -1,22 +1,18 @@
-import { useState, useEffect } from "react";
-import {
-  Cont,
-  ContLi,
-  Li,
-  ContTitulo,
-  Btn,
-} from "../styles/components/Recomendation.Elements";
+import { useState, useEffect,useContext } from "react";
+import {Cont,ContLi,Li,ContTitulo,Btn,} from "../styles/components/Recomendation.Elements";
+import { ContHeart,ContHeartNoFill } from "../styles/components/ItemListContainer.Elements";
 import { fetchFromFirebase } from "../utils/fetchFromFirebase";
 import Loader from "../components/Loader";
-import { CartContext } from "../Context/CartContext";
-import { useContext } from "react";
+import { WishContext } from "../Context/WishContext";
 import RndomElements from "./GetRndomElement";
 import toast from "react-hot-toast";
 
 const ItemRecomendContainer = () => {
   const [data, setData] = useState([]);
 
-  const { addToCart } = useContext(CartContext);
+  const {Existe,removeOfWishList,addToWishList}= useContext(WishContext)
+
+  const { addToCart } = useContext(WishContext);
   const notifyAdd = () => {
     toast.success("Se ha agregado 1 producto", {
       style: {
@@ -60,6 +56,10 @@ const ItemRecomendContainer = () => {
                   >
                     Agregar Al Carrito
                   </Btn>
+                  {
+                    Existe(props.id)? <ContHeart type='checkbox' onClick={()=>removeOfWishList(props.id)}/> 
+                    : <ContHeartNoFill  type='checkbox'onClick={()=>addToWishList(props)}/>
+                }
                 </Li>
               );
             })}

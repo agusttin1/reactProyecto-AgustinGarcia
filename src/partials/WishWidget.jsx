@@ -20,7 +20,7 @@ const HeartIcon = () => {
         {QtyInWish() === 0 ? (
           <NoContador></NoContador>
         ) : (
-          <Contador>{parseInt(QtyInWish())}</Contador>
+          <Contador>({parseInt(QtyInWish())})</Contador>
         )}
       </ContHeart>
     </>

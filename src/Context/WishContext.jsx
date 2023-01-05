@@ -38,8 +38,7 @@ const WishContexProvider = ({ children }) => {
   return (
     <>
       <WishContext.Provider
-        value={{ addToWishList, wish, QtyInWish, removeOfWishList, Existe }}
-      >
+        value={{ addToWishList, wish, QtyInWish, removeOfWishList, Existe }}>
         {children}
       </WishContext.Provider>
     </>

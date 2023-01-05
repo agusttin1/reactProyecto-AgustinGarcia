@@ -7,7 +7,7 @@ import BatmanError from "../assets/heroPngs/cartEmpty.png"
 const CartEmpty = () =>{
 return(
 <ContCarritoVacio>
-<div style={{width:'250px',height:'250px'}}>
+<div style={{width:'400px',height:'400px'}}>
     <img style={{width:'100%',height:'100%',objectFit:'contain'}} src={`${BatmanError}`} alt="" />
 </div>
 <PmsjErr>“Oops, parece que no hay nadie aqui!</PmsjErr>

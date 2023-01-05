@@ -31,14 +31,11 @@ export const Comic = (props) => {
             <StyledLink to={`/item/${props.id}`}>Ver Producto</StyledLink>
           </ButtonCard>
         </CardBody>
-        <div>
                 {
-                    Existe(props.id)? <ContHeart type='checkbox' onClick={()=>{
-      
-                      removeOfWishList(props.id)
-                    }}/> : <ContHeartNoFill  type='checkbox'onClick={()=>addToWishList(props)}/>
+                    Existe(props.id)? <ContHeart type='checkbox' onClick={()=>removeOfWishList(props.id)}/> 
+                    : <ContHeartNoFill  type='checkbox'onClick={()=>addToWishList(props)}/>
                 }
-            </div>
+        
         {props.novedad ? (
           <ContNovedad>
             <ImgNovedad src={props.novedad} alt="pngNovedad" />

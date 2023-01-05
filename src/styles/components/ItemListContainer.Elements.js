@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
-import heartFill from '../../assets/pngHeart/proxy.png'
+import heartFill from '../../assets/pngHeart/Fill.png'
 import heartNoFill from '../../assets/pngHeart/noFill.png'
 
 
@@ -116,6 +116,9 @@ height: 45px;
 position: relative;
 z-index: 1;
 appearance: unset;
+position: absolute;
+top:  0px;
+right: -10px;
 &::after{
     background-color: transparent;
 background:url(${heartFill}) no-repeat;
@@ -140,6 +143,9 @@ border: none;
 outline: none;
 z-index: 1;
 appearance: unset;
+position: absolute;
+top:  0px;
+right: -10px;
 
 &::after{
     background: url(${heartNoFill}) no-repeat;

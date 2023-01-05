@@ -10,10 +10,10 @@ export const ContadorCart = styled.span`
 position: absolute;
     right: -12px;
     top: -18px;
-    background-image: var(--color-primary);
+    background-color: var(--color-primary);
     font-size: 12.5px;
     font-weight: 600;
-    color: white;
+color: white;
     border: black 2px solid;
     border-radius: 50px;
     padding: 1px;
