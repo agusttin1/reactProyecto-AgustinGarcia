@@ -13,6 +13,7 @@ import { Toaster } from "react-hot-toast";
 import WishList from "./partials/WishList";
 import WishContexProvider from "./Context/WishContext";
 
+
 const App = () => {
   return (
     <CartContextProvider>
@@ -47,6 +48,7 @@ const App = () => {
               }
             ></Route>
             <Route path="/wishList" element={<WishList />}></Route>
+           
           </Routes>
           <Footer />
         </BrowserRouter>

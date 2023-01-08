@@ -6,15 +6,14 @@ import styled from "styled-components";
 
 export const ContWishList = styled.div`
 
-display: flex;
-flex-direction: column;
 
-width: 100%;
-height: auto;
-flex-flow: row wrap;
-    
-   padding:30px;
-   gap: 25px;
+   display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    height: auto;
+   
+  
 
 `
 export const ContCardWishList = styled.div`
@@ -30,7 +29,7 @@ width: 100%;
 `
 
 export const ContTituloWList = styled.div`
-
+padding: 30px;
 display: flex;
 justify-content: space-between;
 align-items: center;

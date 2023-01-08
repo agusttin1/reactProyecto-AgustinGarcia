@@ -66,7 +66,7 @@ const MyNavBar = () => {
 
           <ContIcons>
             <IconAccounts>
-              <AiOutlineUser />
+                <AiOutlineUser />
             </IconAccounts>
             <HeartIcon/>
             <Carrito />

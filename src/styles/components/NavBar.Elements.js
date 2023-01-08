@@ -7,7 +7,8 @@ width: 100%;
 height:100%;
 position: sticky;
 top: 0;
-z-index: 99;
+z-index: 999;
+
 background-color: transparent;
 display: flex;
 justify-content: center;
@@ -24,6 +25,7 @@ align-items: center;
 display: flex;
 justify-content: flex-start;
 gap: 75px;
+
 
 `
 
@@ -46,7 +48,7 @@ export const Menu = styled.ul`
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 20px;
+gap: 20px;  
 margin: 0;
 padding:0;
 
@@ -54,8 +56,9 @@ padding:0;
 width: 100%;
 height: 90vh;
 gap: 0;
+z-index: 99;
 position: absolute;
-top: 200px;
+top: 130px;
 left: ${({click}) => click ? 0 : '-100%'};
 flex-direction: column;
 background-color:var(--bg-primary);

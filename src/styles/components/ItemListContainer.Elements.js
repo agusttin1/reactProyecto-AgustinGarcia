@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
-import heartFill from '../../../public/pngHeart/Fill.png'
-import heartNoFill from '../../../public/pngHeart/NoFill.png'
+import heartFill from '/pngHeart/Fill.png'
+import heartNoFill from '/pngHeart/NoFill.png'
 
 
 export const ContMainCards = styled.div`
@@ -12,12 +12,14 @@ display: flex;
     height: auto;
     gap: 25px;
     justify-content: center;
+ 
    
     `
 export const ContCard = styled.div`
 width: 240px;
 height: auto;
 position: relative;
+
 
 z-index: 99;
 padding:20px;

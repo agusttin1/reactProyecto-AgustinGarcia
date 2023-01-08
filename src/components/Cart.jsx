@@ -1,56 +1,18 @@
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../Context/CartContext";
-import {
-  ContenedorCart,
-  ContCart,
-  InfoCart,
-  TextName,
-  IconTrash,
-  BtnAmount,
-  BtnClear,
-  Wrapper,
-  ContTitulo,
-  BuyCont,
-  Impuesto,
-  ContInfo,
-  PriceOld,
-  PriceTotal,
-  TotalFin,
-  Totals,
-  WrapperBuy,
-  TituloWrapper,
-  ImpuestoPrice,
-  ImgCont,
-  Img,
-  Nombre,
-  DataPrice,
-  SubtotalItem,
-  ContIcon,
-  IconTrash2,
-  ContPng,
-  Envio,
+
+import {ContenedorCart,ContCart,InfoCart,TextName,IconTrash,BtnAmount,BtnClear,Wrapper,ContTitulo,BuyCont,Impuesto,ContInfo,PriceOld,PriceTotal,TotalFin,Totals,WrapperBuy,TituloWrapper,ImpuestoPrice,ImgCont,Img,Nombre,DataPrice,SubtotalItem,ContIcon,IconTrash2,ContPng,Envio,
 } from "../styles/components/Cart.Elements";
 import CartEmpty from "./CartEmptyContainer";
 import Spderman from "../assets/heroPngs/spman.png";
 import "../App.css";
-
-import { serverTimestamp, updateDoc, increment, doc } from "firebase/firestore";
-import { db } from "../utils/firebaseConfig";
-import { AlertClear, AlertOrder } from "./Toast&Alert";
+import { AlertClear,AlertOrder } from "./Toast&Alert";
 import toast from "react-hot-toast";
-import { createOrderFireBase } from "../utils/fetchFromFirebase";
+import { updateStock,createOrderFireBase } from "../utils/fetchFromFirebase";
 
 const Cart = () => {
   const [icon, setIcon] = useState(false);
-  const {
-    CartList,
-    deleteThis,
-    ClearCart,
-    TotalPrice,
-    QtyInCart,
-    TotalPerItem,
-    CalcTaxes,
-    TotalWithTax,
+  const {CartList,deleteThis,ClearCart,TotalPrice,QtyInCart,TotalPerItem,CalcTaxes,TotalWithTax,
   } = useContext(CartContext);
 
   useEffect(() => {
@@ -71,17 +33,8 @@ const Cart = () => {
       duration: 1000,
     });
   };
-
-  const updateStock = () => {
-    CartList.forEach(async (item) => {
-      const itemRef = doc(db, "products", item.id);
-      await updateDoc(itemRef, {
-        stock: increment(-item.cantidad),
-      });
-    });
-  };
-
   const CreateOrder = () => {
+   
     let order = {
       buyer: {
         name: "Leo Messi",
@@ -100,7 +53,7 @@ const Cart = () => {
 
     createOrderFireBase(order)
       .then((res) => {
-        updateStock();
+        updateStock(CartList);
         AlertOrder(res);
         ClearCart();
       })
@@ -195,7 +148,7 @@ const Cart = () => {
                 <img src={`${Spderman}`} alt="" />
               </ContPng>
 
-              <BtnAmount onClick={() => CreateOrder()}>Comprar</BtnAmount>
+              <BtnAmount onClick={ ()=>CreateOrder()}>Comprar</BtnAmount>
             </BuyCont>
           </WrapperBuy>
         </Wrapper>

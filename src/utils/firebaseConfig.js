@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC_2R5tgsLLA3zXBVb4zefLuRrS2jeXasQ",
@@ -15,3 +16,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
+
+// permitira registrarnos con lo que sea (gitHub,Google,etc) y poder logearnos

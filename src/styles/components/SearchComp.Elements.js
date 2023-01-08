@@ -17,6 +17,7 @@ position: relative;
 clip-path: polygon(0% 0%, 100% 0, 100% 100%, 54% 87%, 0 72%);
 
 
+
 &::after{
   content: '';
   width: 100%;
@@ -58,6 +59,7 @@ z-index: 1;
 border-radius: 10px;
 color:white;
 padding: 10px;
+
 `
 
 export const Search = styled.input`
@@ -99,11 +101,16 @@ font-weight: 800;
 export const ContComp = styled.div`
 padding: 40px;
 display: flex;
+flex-direction: column;
 width: 100%;
 margin: auto;
 align-items: center;
 gap: 20px;
 flex-flow:row wrap;
+@media (max-width:850px ) {
+  flex-direction: column;
+  
+}
 
 
 `

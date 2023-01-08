@@ -3,10 +3,10 @@
 import { collection, getDocs, query,where,doc,getDoc,orderBy,setDoc } from "firebase/firestore"; 
 
 import { db } from "./firebaseConfig";
+import { updateDoc, increment} from "firebase/firestore";
 
 
-
-export const fetchFromFirebase = async(Category) =>{
+ export const fetchFromFirebase = async(Category) =>{
   let q
   if(Category){
     
@@ -25,7 +25,6 @@ const querySnapshot = await getDocs(q);
     }))
     
     return dataFromFirestore
-    
     
 
 }
@@ -50,10 +49,22 @@ export const fetchOneFromFirebase = async(id)=>{
   }
   
   
-  export const createOrderFireBase = async(order)=>{
+ export const createOrderFireBase = async(order)=>{
     const newOrderRef = doc(collection(db,'orders'))
     
     await setDoc(newOrderRef,order)
     return newOrderRef
     
   }
+
+
+
+  export const updateStock = (CartList) => {
+
+    CartList.forEach(async (item) => {
+      const itemRef = doc(db, "products", item.id);
+      await updateDoc(itemRef, {
+        stock: increment(-item.cantidad),
+      });
+    });
+  };

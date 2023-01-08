@@ -50,6 +50,7 @@ height: 65px;
 top: 245px;
 right: 0px;
 
+
 img{
     width: 100%;
     height: 100%;
@@ -64,6 +65,7 @@ width: 65px;
 height: 65px;
 top: 245px;
 left: 0;
+
 img{
     width: 100%;
     height: 100%;
