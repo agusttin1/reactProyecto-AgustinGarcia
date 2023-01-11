@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
-import { fetchFromFirebase } from "../utils/fetchFromFirebase";
-import SearchComponent from "./Searcher";
-import MiniHeroCont from "./MiniHeroCont";
+import { fetchFromFirebase } from "../../utils/fetchFromFirebase";
+import SearchComponent from "../Searcher";
+import MiniHeroCont from "../MiniHeroCont";
 
 
 const ItemListContainer = () => {

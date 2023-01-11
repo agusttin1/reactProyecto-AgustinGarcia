@@ -103,6 +103,7 @@ export const ContIcon = styled.div`
   position: absolute;
   top: 15px;
   right: 15px;
+  
 `;
 export const IconTrash = styled(TbTrash)`
   font-size: 26px;

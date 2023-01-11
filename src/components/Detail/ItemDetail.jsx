@@ -17,13 +17,13 @@ import {
   ContStock,
   BtnToCart,
   MainDetail,
-} from "../styles/components/ItemDetailContainer.Elements";
-import ItemCount from "./ItemCount.jsx";
+} from "../../styles/components/ItemDetailContainer.Elements";
+import ItemCount from "../Detail/ItemCount";
 import { useState, useContext } from "react";
-import Loader from "./Loader.jsx";
+import Loader from "../Loader/Loader";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-import { CartContext } from "../Context/CartContext.jsx";
+import { CartContext } from "../../Context/CartContext.jsx";
 
 const ItemDetail = ({ items }) => {
   const [itemCount, setItemCount] = useState(0);

@@ -5,8 +5,8 @@ import {
   BtnSub,
   ContBtnDetail,
   Count,
-} from "../styles/components/ItemCount.Elements";
-import { ButtonDetail } from "../styles/components/ItemDetailContainer.Elements";
+} from "../../styles/components/ItemCount.Elements";
+import { ButtonDetail } from "../../styles/components/ItemDetailContainer.Elements";
 
 const ItemCount = ({ initial, onAdd, stock }) => {
   const [count, setCount] = useState(initial);

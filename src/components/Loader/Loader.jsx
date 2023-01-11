@@ -1,4 +1,4 @@
-import { ContLoader, Pulse, TextLoader } from "../styles/components/Loader.Elements";
+import { ContLoader, Pulse, TextLoader } from "../../styles/components/Loader.Elements";
 const Loader = () => {
   return (
     <ContLoader>

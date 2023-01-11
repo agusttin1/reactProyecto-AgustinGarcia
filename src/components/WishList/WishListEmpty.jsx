@@ -1,8 +1,8 @@
 
-import bgSpderman from '../assets/heroPngs/emptyWishListBG.png'
-import { StyledLink } from '../styles/components/Cart.Elements'
+import bgSpderman from '../../assets/heroPngs/emptyWishListBG.png'
+import { StyledLink } from '../../styles/components/Cart.Elements'
 
-import { ContWishListEmpty,PMsjWishList,ContImgWishList } from '../styles/components/WishList.Elements'
+import { ContWishListEmpty,PMsjWishList,ContImgWishList } from '../../styles/components/WishList.Elements'
 
 const WishListEmpty = ()=>{
     return(

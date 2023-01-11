@@ -4,10 +4,10 @@ import {
   Contador,
   Icon,
   IconFill,
-} from "../styles/components/WishWidget.Elements";
+} from "../../styles/components/WishWidget.Elements";
 import { useContext } from "react";
-import { WishContext } from "../Context/WishContext";
-import { NoContador } from "../styles/components/CartWidget.Elements";
+import { WishContext } from "../../Context/WishContext";
+import { NoContador } from "../../styles/components/CartWidget.Elements";
 
 const HeartIcon = () => {
   const { QtyInWish } = useContext(WishContext);

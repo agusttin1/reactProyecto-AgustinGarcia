@@ -10,11 +10,11 @@ import {
   StyledLink,
   ContHeart,
   ContHeartNoFill
-} from "../styles/components/ItemListContainer.Elements";
+} from "../../styles/components/ItemListContainer.Elements";
 
 
 import { useContext } from "react";
-import { WishContext } from "../Context/WishContext";
+import { WishContext } from "../../Context/WishContext";
 export const Comic = (props) => {
   const { addToWishList , removeOfWishList,Existe} = useContext(WishContext);
 

@@ -1,9 +1,9 @@
 import { useState, useEffect,useContext } from "react";
-import {Cont,ContLi,Li,ContTitulo,Btn,} from "../styles/components/Recomendation.Elements";
-import { ContHeart,ContHeartNoFill } from "../styles/components/ItemListContainer.Elements";
-import { fetchFromFirebase } from "../utils/fetchFromFirebase";
-import Loader from "../components/Loader";
-import { WishContext } from "../Context/WishContext";
+import {Cont,ContLi,Li,ContTitulo,Btn,} from "../../../styles/components/Recomendation.Elements";
+import { ContHeart,ContHeartNoFill } from "../../../styles/components/ItemListContainer.Elements";
+import { fetchFromFirebase } from "../../../utils/fetchFromFirebase";
+import Loader from "../../Loader/Loader";
+import { WishContext } from "../../../Context/WishContext";
 import RndomElements from "./GetRndomElement";
 import toast from "react-hot-toast";
 

@@ -1,6 +1,6 @@
 import { Comic } from "./Item";
-import Loader from "./Loader";
-import { ContMainCards } from "../styles/components/ItemListContainer.Elements";
+import Loader from "../Loader/Loader";
+import { ContMainCards } from "../../styles/components/ItemListContainer.Elements";
 
 
 export const ItemList = ({ items }) => {

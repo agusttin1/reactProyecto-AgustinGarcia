@@ -3,12 +3,12 @@ import {
   CarritoCont,
   Icon,
   ContadorCart,
-} from "../styles/components/CartWidget.Elements";
+} from "../../styles/components/CartWidget.Elements";
 
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 const Carrito = () => {
   const { QtyInCart } = useContext(CartContext);
   return (

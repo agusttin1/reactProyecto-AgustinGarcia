@@ -120,6 +120,7 @@ display: flex;
 align-items: center;
 padding-right: 1rem;
 gap: 30px;
+width: auto;
 `
 
 
@@ -149,20 +150,3 @@ export const TopNavBar = styled.div`
   `
 
 
-export const IconAccounts = styled.div`
-margin: 0;
-padding: 0;
-display: flex;
-gap:20px;
-font-size: 25px;
-color: var(--color-primary);
-display: flex;
-align-items: center;
-p{
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-}
-
-
-`

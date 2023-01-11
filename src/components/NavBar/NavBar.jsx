@@ -1,7 +1,6 @@
-import { AiOutlineUser } from "react-icons/ai";
 import { BsTruck } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Carrito from "./CartWidget";
+import Carrito from "../Cart/CartWidget";
 import {
   NavBarContainer,
   ContLogo,
@@ -13,18 +12,17 @@ import {
   ContIcons,
   ContIconBars,
   TopNavBar,
-  IconAccounts,
-} from "../styles/components/NavBar.Elements";
-import "../App.css";
+} from "../../styles/components/NavBar.Elements";
+import "../../App.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import HeartIcon from "../partials/WishWidget";
+import HeartIcon from "../WishList/WishWidget";
 
-import Logo from "../assets/logo/logoWeb.png";
+import Logo from "../../assets/logo/logoWeb.png";
+
 
 const MyNavBar = () => {
   const [click, setClick] = useState(false);
-  
 
   const ChangeClick = () => {
     return setClick(!click);
@@ -63,17 +61,12 @@ const MyNavBar = () => {
               <StyledLink to="/categoria/Manga">Manga</StyledLink>
             </MenuItem>
           </Menu>
-
           <ContIcons>
-            <IconAccounts>
-                <AiOutlineUser />
-            </IconAccounts>
-            <HeartIcon/>
+            <HeartIcon />
             <Carrito />
           </ContIcons>
         </NavBar>
       </NavBarContainer>
-     
     </header>
   );
 };
